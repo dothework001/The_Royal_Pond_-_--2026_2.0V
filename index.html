@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>THE ROYAL POND - නිල් මානෙල් රාත්‍රිය 2026</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            royal: {
+              950: '#040714',
+              900: '#081026',
+              800: '#0f1f45',
+              700: '#1b326b',
+            },
+            gold: {
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              goldglow: '#d4af37'
+            }
+          },
+          fontFamily: {
+            sinhala: ['"Noto Sans Sinhala"', 'sans-serif'],
+            serif: ['"Cinzel"', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Noto Sans Sinhala & Cinzel for Royal Aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Sinhala:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Noto Sans Sinhala', sans-serif;
+      background: #030510;
+      color: #f1f5f9;
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      background:
+        linear-gradient(180deg, rgba(7, 13, 31, 0.84), rgba(4, 7, 20, 0.94)),
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12), transparent 34%);
+      border-inline: 1px solid rgba(212, 175, 55, 0.32);
+      box-shadow: 0 0 0 1px rgba(255, 242, 204, 0.04), 0 28px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.12);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    main > header {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      background:
+        linear-gradient(180deg, rgba(3, 5, 16, 0.78), rgba(3, 5, 16, 0.9)),
+        url('Head_line _bg.gif') center 42% / cover no-repeat;
+      border-radius: 1.5rem 1.5rem 0 0;
+      background-blend-mode: normal;
+    }
+
+    main > header h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    /* 3D Gate Wrapper */
+    #portalContainer {
+      position: fixed;
+      inset: 0;
+      min-height: 100dvh;
+      z-index: 1000;
+      perspective: 1400px;
+      overflow: hidden;
+      background: #02040a;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .doors-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    .door {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50.2%;
+      height: 100%;
+      background-color: #02040a;
+      background-image: url('Door_bg.gif');
+      background-size: 200% 100%;
+      background-repeat: no-repeat;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 1.6s cubic-bezier(0.65, 0.05, 0.25, 1);
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.95);
+      transform-origin: center;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .door-left {
+      left: 0;
+      background-position: left center;
+      transform-origin: left center;
+      border-right: 2px solid #f59e0b;
+      box-shadow: 10px 0 40px rgba(0, 0, 0, 0.9), inset -8px 0 28px rgba(255, 255, 255, 0.05), inset 0 0 80px rgba(0, 0, 0, 0.8);
+    }
+
+    .door-right {
+      right: 0;
+      background-position: right center;
+      transform-origin: right center;
+      border-left: 2px solid #f59e0b;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9), inset 8px 0 28px rgba(255, 255, 255, 0.05), inset 0 0 80px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Subtle Door Panel Patterns */
+    .door-pattern {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .door-pattern::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(212, 175, 55, 0.15);
+      border-radius: 8px;
+    }
+
+    /* Gates open transform */
+    #portalContainer.opened .door-left {
+      transform: rotateY(-105deg) translateZ(10px);
+    }
+
+    #portalContainer.opened .door-right {
+      transform: rotateY(105deg) translateZ(10px);
+    }
+
+    #portalContainer.opened #portalCenterStage {
+      opacity: 0;
+      transform: scale(1.15) translateY(-20px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Golden Shimmering Text & Elements */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff2cc 0%, #f7d070 30%, #d4af37 60%, #aa820a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-box-glow {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.22), inset 0 0 15px rgba(212, 175, 55, 0.1);
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(20, 35, 73, 0.78), rgba(5, 10, 27, 0.86));
+      border: 1px solid rgba(245, 158, 11, 0.28);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255, 242, 204, 0.06), 0 18px 38px rgba(0, 0, 0, 0.2);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(245, 158, 11, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .sponsor-tier-card {
+      position: relative;
+      overflow: hidden;
+      animation: sponsor-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .sponsor-tier-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 25%, rgba(255, 242, 204, 0.16) 50%, transparent 75%);
+      transform: translateX(-130%);
+      animation: sponsor-shimmer 4.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .sponsor-tier-card:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .sponsor-tier-card:nth-child(3) {
+      animation-delay: 0.24s;
+    }
+
+    .sponsor-tier-card:nth-child(4) {
+      animation-delay: 0.36s;
+    }
+
+    .sponsor-tier-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(245, 210, 96, 0.7);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42), 0 0 26px rgba(212, 175, 55, 0.22);
+    }
+
+    .sponsorship-feature {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 1.25rem;
+      border: 1px solid rgba(245, 190, 55, 0.58);
+      background:
+        radial-gradient(circle at 50% -20%, rgba(245, 158, 11, 0.24), transparent 48%),
+        linear-gradient(145deg, rgba(39, 29, 10, 0.96), rgba(6, 10, 27, 0.96) 58%, rgba(15, 31, 69, 0.92));
+      box-shadow: 0 0 0 1px rgba(255, 242, 204, 0.06), 0 20px 52px rgba(0, 0, 0, 0.42), 0 0 42px rgba(212, 175, 55, 0.16);
+    }
+
+    .sponsorship-feature::before {
+      content: '';
+      position: absolute;
+      inset: 0.45rem;
+      border: 1px solid rgba(252, 211, 77, 0.2);
+      border-radius: 1.35rem;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .sponsorship-feature::after {
+      content: '';
+      position: absolute;
+      width: 11rem;
+      height: 11rem;
+      right: -5rem;
+      top: -5rem;
+      border-radius: 9999px;
+      background: rgba(245, 158, 11, 0.16);
+      filter: blur(28px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .sponsor-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid rgba(252, 211, 77, 0.34);
+      border-radius: 9999px;
+      color: #fde68a;
+      background: rgba(245, 158, 11, 0.1);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .sponsor-benefit-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin: 1rem 0 1.1rem;
+    }
+
+    .sponsor-benefit-strip > div {
+      padding: 0.65rem 0.45rem;
+      border: 1px solid rgba(255, 242, 204, 0.12);
+      border-radius: 0.9rem;
+      background: rgba(2, 6, 23, 0.4);
+      text-align: center;
+    }
+
+    .sponsor-benefit-strip strong {
+      display: block;
+      color: #fcd34d;
+      font-size: 1.05rem;
+      line-height: 1.1;
+    }
+
+    .sponsor-benefit-strip span {
+      display: block;
+      margin-top: 0.25rem;
+      color: #cbd5e1;
+      font-size: 0.58rem;
+      line-height: 1.25;
+    }
+
+    .sponsor-contact-link {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      color: #111827;
+      font-size: 0.72rem;
+      font-weight: 800;
+      box-shadow: 0 8px 22px rgba(245, 158, 11, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .sponsor-contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(245, 158, 11, 0.38);
+    }
+
+    #themeDetailsModal {
+      overscroll-behavior: contain;
+    }
+
+    #themeDetailsModal .theme-details-panel {
+      max-height: min(90svh, 760px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(245, 158, 11, 0.7) transparent;
+    }
+
+    #themeDetailsModal .theme-details-content h4 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.45rem;
+      color: #fde68a;
+      font-size: 0.85rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    #themeDetailsModal .theme-details-content p,
+    #themeDetailsModal .theme-details-content li {
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      line-height: 1.75;
+    }
+
+    #themeDetailsModal .theme-details-content ul {
+      padding-left: 1.15rem;
+      list-style: disc;
+    }
+
+    #themeDetailsModal .theme-details-content strong {
+      color: #fef3c7;
+    }
+
+    #welfareDetailsModal {
+      overscroll-behavior: contain;
+    }
+
+    #welfareDetailsModal .welfare-details-panel {
+      max-height: min(90svh, 760px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(245, 158, 11, 0.7) transparent;
+    }
+
+    #welfareDetailsContent h4 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.45rem;
+      color: #fde68a;
+      font-size: 0.85rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    #welfareDetailsContent li {
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      line-height: 1.75;
+    }
+
+    #welfareDetailsContent ul {
+      padding-left: 1.15rem;
+      list-style: disc;
+    }
+
+    #welfareDetailsContent strong {
+      color: #fef3c7;
+    }
+
+    @keyframes sponsor-rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes sponsor-shimmer {
+      0%, 58%, 100% {
+        transform: translateX(-130%);
+      }
+      76% {
+        transform: translateX(130%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sponsor-tier-card,
+      .sponsor-tier-card::after {
+        animation: none;
+      }
+    }
+
+    /* Music equalizer visualizer bars */
+    .bar {
+      width: 3px;
+      background: #fbbf24;
+      border-radius: 9999px;
+      animation: bounce-eq 1.2s ease-in-out infinite alternate;
+    }
+    .bar:nth-child(2) { animation-delay: 0.2s; height: 16px; }
+    .bar:nth-child(3) { animation-delay: 0.4s; height: 10px; }
+    .bar:nth-child(4) { animation-delay: 0.1s; height: 14px; }
+
+    @keyframes bounce-eq {
+      0% { height: 4px; }
+      100% { height: 18px; }
+    }
+
+    .equalizer-paused .bar {
+      animation-play-state: paused !important;
+      height: 4px !important;
+    }
+
+    /* Sparkle Particle Effect */
+    @keyframes float-particle {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-70px) scale(1.2); opacity: 0; }
+    }
+
+    .particle {
+      position: absolute;
+      background: radial-gradient(circle, #ffeaa7 0%, rgba(245, 158, 11, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float-particle 4s infinite linear;
+    }
+
+    #languageControl {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 60;
+      color: #fcd34d;
+      background: rgba(2, 6, 23, 0.86);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 9999px;
+      padding: 0.42rem 0.55rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      outline: none;
+      backdrop-filter: blur(8px);
+    }
+
+    #languageControl:focus {
+      border-color: #fcd34d;
+      box-shadow: 0 0 0 2px rgba(252, 211, 77, 0.2);
+    }
+
+    @media (max-width: 767px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+      }
+
+      main {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100svh;
+        overflow: hidden;
+        padding: 1rem 0.75rem 2rem;
+        border-inline: 0;
+      }
+
+      main > header {
+        padding-top: 0.75rem;
+        padding-bottom: 1.1rem;
+      }
+
+      main > header h1 {
+        font-size: 2.35rem;
+        line-height: 1.15;
+      }
+
+      main > header h2 {
+        font-size: 1.5rem;
+      }
+
+      main > header p {
+        font-size: 0.72rem;
+        line-height: 1.7;
+      }
+
+      main > header .inline-flex {
+        padding: 0.6rem;
+        margin-bottom: 0.7rem;
+      }
+
+      main > header .inline-flex span {
+        font-size: 1.5rem;
+      }
+
+      .glass-card {
+        border-radius: 1.25rem;
+      }
+
+      .grid.grid-cols-3 {
+        gap: 0.6rem;
+      }
+
+      .grid.grid-cols-4 {
+        gap: 0.35rem;
+      }
+
+      .grid.grid-cols-4 > div {
+        min-width: 0;
+      }
+
+      .grid.grid-cols-4 > div span:first-child {
+        font-size: clamp(1.4rem, 5vw, 2.25rem);
+      }
+
+      .sponsor-tier-card {
+        padding: 0.9rem;
+      }
+
+      .sponsorship-feature {
+        padding: 1rem;
+      }
+
+      .sponsor-benefit-strip {
+        gap: 0.35rem;
+      }
+
+      #btnEnterPortal,
+      main section button,
+      #rsvpForm button {
+        min-height: 48px;
+      }
+
+      main section button {
+        touch-action: manipulation;
+      }
+
+      input,
+      select,
+      textarea {
+        min-height: 44px;
+      }
+
+      .space-y-3 > div {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 600px) and (orientation: portrait) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+        width: 100%;
+        min-width: 0;
+      }
+
+      #portalContainer {
+        perspective: 900px;
+        min-height: 100svh;
+        height: 100svh;
+      }
+
+      .door {
+        width: 50%;
+        background-size: 200% 100%;
+      }
+
+      .door-left,
+      .door-right {
+        border-width: 1px;
+      }
+
+      .door-pattern {
+        inset: 10px;
+        border-radius: 8px;
+      }
+
+      .door-pattern::after {
+        inset: 8px;
+        border-radius: 5px;
+      }
+
+      #portalCenterStage {
+        width: 100%;
+        max-width: 380px;
+        padding-inline: 16px;
+        transform: translateY(-2vh);
+      }
+
+      #portalCenterStage h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      #portalCenterStage h2 {
+        font-size: 1.15rem;
+        line-height: 1.4;
+      }
+
+      #portalCenterStage p {
+        line-height: 1.7;
+      }
+
+      main {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100svh;
+        overflow: hidden;
+        padding: 0.75rem 0.75rem 2rem;
+        border-inline: 0;
+      }
+
+      main::before {
+        inset: 6px;
+        border-radius: 18px;
+      }
+
+      main > header {
+        padding-top: 0.6rem;
+        padding-bottom: 1.1rem;
+      }
+
+      main > header h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      .glass-card {
+        border-radius: 1.25rem;
+      }
+
+      [aria-label="Countdown Timer"] {
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      [aria-label="Countdown Timer"] .flex.items-center.justify-between {
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      [aria-label="Countdown Timer"] .flex.items-center.justify-between > span {
+        font-size: 0.62rem;
+      }
+
+      [aria-label="Countdown Timer"] .mt-4 {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      #rsvpModal {
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 0.75rem;
+      }
+
+      #rsvpModal > div {
+        max-height: calc(100svh - 1.5rem);
+        overflow-y: auto;
+        margin-block: 0;
+        padding: 1.25rem;
+      }
+
+      #audioControlPill {
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+
+      .grid.grid-cols-4 {
+        gap: 0.35rem;
+      }
+
+      .grid.grid-cols-4 > div {
+        min-width: 0;
+      }
+
+      #languageControl {
+        top: 0.75rem;
+        left: 0.75rem;
+      }
+
+    }
+
+    @media (max-width: 420px) {
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      main > header h1 {
+        font-size: 2rem;
+      }
+
+      main > header h2 {
+        font-size: 1.35rem;
+      }
+
+      .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .sponsor-tier-card {
+        padding: 0.8rem;
+      }
+
+      .sponsor-tier-card .text-base {
+        font-size: 1rem;
+      }
+
+      .grid.grid-cols-3 {
+        gap: 0.4rem;
+      }
+
+      .grid.grid-cols-3 > div {
+        padding: 0.65rem 0.35rem;
+      }
+
+      .grid.grid-cols-3 > div span:last-child {
+        font-size: 0.68rem;
+      }
+
+      [aria-label="Countdown Timer"] .grid.grid-cols-4 > div {
+        padding-block: 0.7rem;
+      }
+
+      [aria-label="Countdown Timer"] .grid.grid-cols-4 > div span:first-child {
+        font-size: 1.5rem;
+      }
+
+      .space-y-3 > div {
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.8rem;
+      }
+
+      .space-y-3 > div > div:first-child {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.35rem;
+      }
+
+      #rsvpModal > div {
+        padding: 1rem;
+      }
+
+      #themeDetailsModal {
+        padding: 0.55rem;
+        align-items: flex-start;
+      }
+
+      #themeDetailsModal .theme-details-panel {
+        max-height: calc(100svh - 1.1rem);
+        border-radius: 1.25rem;
+        padding: 1.1rem;
+      }
+
+      #welfareDetailsModal {
+        padding: 0.55rem;
+        align-items: flex-start;
+      }
+
+      #welfareDetailsModal .welfare-details-panel {
+        max-height: calc(100svh - 1.1rem);
+        border-radius: 1.25rem;
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-gold-500 selection:text-black">
+
+  <select id="languageControl" aria-label="Select language">
+    <option value="si">සිං</option>
+    <option value="en">EN</option>
+  </select>
+  <!-- Luxury piano ambience is generated locally after the visitor presses Enter. -->
+  <audio id="bgAudio" loop preload="none"></audio>
+
+  <!-- Sticky Floating Audio Control Bar -->
+  <aside id="audioControlPill" class="fixed top-4 right-4 z-50">
+    <button id="audioToggleButton" onclick="toggleAudio()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-950/85 border border-gold-400/50 text-lg text-gold-300 hover:text-amber-200 hover:border-gold-300 shadow-lg backdrop-blur-md transition focus:outline-none" aria-label="Unmute Background Music" title="Unmute Background Music">
+      <span id="audioLabel" aria-hidden="true">🔇</span>
+    </button>
+  </aside>
+
+  <!-- 3D PORTAL OVERLAY SCREEN -->
+  <div id="portalContainer" class="flex items-center justify-center">
+    <div class="doors-wrapper">
+      <!-- Left Door -->
+      <div class="door door-left flex flex-col justify-center items-end pr-4 sm:pr-8">
+        <div class="door-pattern"></div>
+        <div class="hidden sm:block opacity-30 text-gold-300 font-serif text-8xl font-black select-none pointer-events-none pr-6">R</div>
+      </div>
+      <!-- Right Door -->
+      <div class="door door-right flex flex-col justify-center items-start pl-4 sm:pl-8">
+        <div class="door-pattern"></div>
+        <div class="hidden sm:block opacity-30 text-gold-300 font-serif text-8xl font-black select-none pointer-events-none pl-6">P</div>
+      </div>
+    </div>
+
+    <!-- Entrance Emblem & Call To Action Center Stage -->
+    <div id="portalCenterStage" class="relative z-30 px-6 text-center max-w-md mx-auto transition duration-500">
+      <div class="relative inline-block mb-6">
+        <div class="w-24 h-24 mx-auto rounded-full bg-slate-950/90 border-2 border-gold-400 flex items-center justify-center text-4xl shadow-[0_0_50px_rgba(245,158,11,0.45)] overflow-hidden">
+          <img src="Code_Generated_Image.gif" alt="Blue water lily" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <p class="text-gold-300/90 text-xs sm:text-sm tracking-widest uppercase font-semibold mb-2">
+        රාජකීය සහෝදරත්වයේ ගුරු උපහාර සැඳෑව
+      </p>
+
+      <h1 class="font-serif text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-1 drop-shadow-lg">
+        THE ROYAL POND
+      </h1>
+      <h2 class="text-lg sm:text-xl font-bold gold-gradient-text mb-5">
+        නිල් මානෙල් රාත්‍රිය 2026
+      </h2>
+
+      <!-- Entrance Action Button -->
+      <button 
+        id="btnEnterPortal"
+        onclick="openRoyalGates()" 
+        class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-slate-950 font-extrabold text-sm tracking-wider uppercase transition-all duration-300 transform active:scale-95 hover:shadow-[0_0_35px_rgba(245,158,11,0.65)] flex items-center justify-center gap-2 mx-auto"
+      >
+        <span>Enter</span>
+      </button>
+
+      <p class="text-slate-500 text-[11px] mt-4 tracking-wide">
+        Royal College Monaragala • 2002 - 2005 Batch
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER (Mobile First Luxury Layout) -->
+  <main class="w-full max-w-xl mx-auto min-h-screen px-4 py-6 sm:py-10 relative">
+
+    <!-- Top Badge & Crest -->
+    <header class="text-center pt-6 pb-8 relative">
+      <div class="inline-flex items-center justify-center p-3 rounded-2xl bg-gradient-to-br from-royal-800/80 to-slate-950/80 border border-gold-400/30 mb-4 shadow-xl">
+        <span class="text-3xl">⚜️</span>
+      </div>
+
+      <div class="inline-block px-4 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-300 text-xs font-semibold mb-3 tracking-wider">
+        ROYAL COLLEGE MONARAGALA
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl font-black tracking-tight text-white mb-2 drop-shadow-md">
+        THE ROYAL POND
+      </h1>
+      <h2 class="text-xl sm:text-2xl font-bold gold-gradient-text mb-4">
+        නිල් මානෙල් රාත්‍රිය 2026
+      </h2>
+
+      <p class="text-slate-300 text-xs sm:text-sm max-w-md mx-auto leading-relaxed px-2 font-normal">
+        වසර ගණනාවකට පසු අපේම සහෝදරත්වයේ මතකයන් යළි අලුත් කරගනිමින්, අපට මඟපෙන්වූ විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් හා පියවරුන්ට උපහාර පුදන මහා සැඳෑව.
+      </p>
+    </header>
+
+    <!-- REALTIME COUNTDOWN CARD -->
+    <section class="glass-card rounded-3xl p-5 sm:p-6 mb-8 border border-gold-400/30 shadow-2xl relative overflow-hidden" aria-label="Countdown Timer">
+      <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+        <span class="text-xs uppercase tracking-widest font-semibold text-gold-300 flex items-center gap-1.5">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          උත්සවයට ඉතිරි කාලය
+        </span>
+        <span class="text-[11px] text-slate-400 font-mono">2026 NOV 28</span>
+      </div>
+
+      <div class="grid grid-cols-4 gap-2 text-center">
+        <div class="bg-royal-950/80 border border-gold-500/20 rounded-2xl py-3 px-1">
+          <span id="days" class="text-2xl sm:text-3xl font-extrabold text-gold-300 font-mono block">00</span>
+          <span class="text-[10px] text-slate-400 font-medium">දින</span>
+        </div>
+        <div class="bg-royal-950/80 border border-gold-500/20 rounded-2xl py-3 px-1">
+          <span id="hours" class="text-2xl sm:text-3xl font-extrabold text-white font-mono block">00</span>
+          <span class="text-[10px] text-slate-400 font-medium">පැය</span>
+        </div>
+        <div class="bg-royal-950/80 border border-gold-500/20 rounded-2xl py-3 px-1">
+          <span id="minutes" class="text-2xl sm:text-3xl font-extrabold text-white font-mono block">00</span>
+          <span class="text-[10px] text-slate-400 font-medium">මිනිත්තු</span>
+        </div>
+        <div class="bg-royal-950/80 border border-gold-500/20 rounded-2xl py-3 px-1">
+          <span id="seconds" class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono block">00</span>
+          <span class="text-[10px] text-slate-400 font-medium">තත්පර</span>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-300">
+        <span class="flex items-center gap-1.5 text-gold-200">
+          <span>📍</span> මොණරාගලදී
+        </span>
+        <span>⏰ ප.ව. 4:30 සිට ඉදිරියට</span>
+      </div>
+    </section>
+
+    <!-- KEY DETAILS TILES -->
+    <section class="grid grid-cols-3 gap-2.5 mb-8">
+      <div class="glass-card rounded-2xl p-3 text-center border-gold-400/20">
+        <span class="text-xl block mb-1">📅</span>
+        <span class="text-[10px] uppercase font-bold tracking-wider text-gold-300/80 block">දිනය</span>
+        <span class="text-xs font-semibold text-white">නොවැ 28</span>
+      </div>
+      <div class="glass-card rounded-2xl p-3 text-center border-gold-400/20">
+        <span class="text-xl block mb-1">🏛️</span>
+        <span class="text-[10px] uppercase font-bold tracking-wider text-gold-300/80 block">නගරය</span>
+        <span class="text-xs font-semibold text-white">මොණරාගල</span>
+      </div>
+      <button type="button" onclick="openThemeDetails()" aria-label="Open Touch of Royal theme details" class="glass-card rounded-2xl p-3 text-center border-gold-400/20 w-full cursor-pointer transition hover:border-gold-400/60 focus:outline-none focus:ring-2 focus:ring-amber-400/60">
+        <span class="text-xl block mb-1">👔</span>
+        <span class="text-[10px] uppercase font-bold tracking-wider text-gold-300/80 block">තේමාව</span>
+        <span class="text-xs font-semibold text-white">Touch of Royal</span>
+      </button>
+    </section>
+
+    <!-- EVENING HIGHLIGHTS SECTION -->
+    <section class="mb-10">
+      <div class="text-center mb-5">
+        <h3 class="text-lg sm:text-xl font-bold text-white flex items-center justify-center gap-2">
+          <span>✨</span>
+          <span>රාත්‍රියේ විශේෂාංග</span>
+          <span>✨</span>
+        </h3>
+        <p class="text-xs text-slate-400 mt-1">රාජකීය අත්දැකීම් සමඟින් වර්ණවත් වන හෝරා කිහිපය</p>
+      </div>
+
+      <div class="space-y-3">
+        <!-- Item 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-2xl flex-shrink-0">
+            🥁
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-gold-300">සාම්ප්‍රදායික රාජකීය පිළිගැනීම</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">මඟුල් බෙර වාදන හා වෙස් නැටුම් සමඟින් උත්කර්ෂවත් පිළිගැනීම.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-2xl flex-shrink-0">
+            🎖️
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-gold-300">ගුරු උපහාර උත්තමාචාරය</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් හා පියවරුන් 10 දෙනෙකුට උපහාර පිදීම.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-2xl flex-shrink-0">
+            🎶
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-gold-300">Live DJ & Retro Dance Floor</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">80s/90s Sinhala Retro Pop, Classics, Baila සහ Club beats සංගීතය.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-2xl flex-shrink-0">
+            🍽️
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-gold-300">රාජකීය රාත්‍රී භෝජන සංග්‍රහය</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">අතිවිශේෂ Buffet Dinner, Welcome Drinks සහ සංග්‍රහයන්.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-2xl flex-shrink-0">
+            📸
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-gold-300">Vintage Photo Studio & Booth</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">පාසල් මිතුරන් සමඟ මතක සටහන් ගැනීමට Red Carpet Photo Backdrop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBER BENEFITS, ALMA MATER & WELFARE FUND -->
+    <section class="mb-10">
+      <button type="button" id="welfareTitle" onclick="openWelfareDetails()" aria-label="Open member benefits and welfare details" class="glass-card glass-card-hover w-full rounded-3xl p-5 text-left border-l-4 border-l-gold-400 transition focus:outline-none focus:ring-2 focus:ring-amber-400/60">
+        <span class="flex items-center justify-between gap-3">
+          <span class="flex items-center gap-2">
+            <span class="text-xl">🤝</span>
+            <span id="welfareButtonTitle" class="text-sm font-bold text-gold-300">සාමාජික ප්‍රතිලාභ සහ සුබසාධනය</span>
+          </span>
+          <span class="text-amber-300 text-lg" aria-hidden="true">→</span>
+        </span>
+        <span id="welfareButtonIntro" class="block text-[11px] text-slate-300 mt-2 leading-relaxed">සාමාජිකයින්ට, ගුරුභවතුන්ට සහ පාසලට හිමිවන ප්‍රතිලාභ දැනගැනීමට මෙතැනින් බලන්න.</span>
+        <span class="inline-flex items-center gap-1 mt-3 text-[10px] font-bold uppercase tracking-wider text-amber-200"><span id="welfareButtonAction">සාමාජික ප්‍රතිලාභ බලන්න</span> <span aria-hidden="true">↗</span></span>
+      </button>
+    </section>
+
+    <!-- SPONSORSHIP TIERS (HORIZONTAL SLIDE / COMPACT) -->
+    <section id="sponsorshipSection" class="sponsorship-feature rounded-3xl mb-10">
+      <div class="relative z-10 text-center">
+        <span class="sponsor-kicker">✦ Special Recognition ✦</span>
+        <h3 class="text-xl sm:text-2xl font-black text-white mt-3">අනුග්‍රාහක දායකත්ව</h3>
+        <p class="text-xs sm:text-sm text-amber-100/80 mt-1 max-w-sm mx-auto leading-relaxed">ඔබේ දායකත්වය රාජකීය රාත්‍රියක මතකයක් පමණක් නොව, අපේ ගුරුභවතුන්ට සහ පාසලට කරන ගෞරවයකි.</p>
+      </div>
+
+      <div class="sponsor-benefit-strip">
+        <div><strong>10+</strong><span>ගුරුභවතුන්ට උපහාර</span></div>
+        <div><strong>2002–05</strong><span>Royal College Batch</span></div>
+        <div><strong>100%</strong><span>රාජකීය දෘශ්‍යතාව</span></div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2.5 relative z-10">
+        <!-- Platinum -->
+        <div class="glass-card sponsor-tier-card rounded-2xl p-3.5 border-gold-400/40 relative">
+          <span class="text-[10px] font-bold text-gold-400 uppercase tracking-widest block">♛ Platinum</span>
+          <span class="text-base font-extrabold text-white block mt-0.5">රු. 75,000</span>
+          <p class="text-[10px] text-slate-300 mt-1 leading-tight">Backdrop logo, 2 Free Tickets, Announcements</p>
+        </div>
+
+        <!-- Gold -->
+        <div class="glass-card sponsor-tier-card rounded-2xl p-3.5 border-gold-400/30">
+          <span class="text-[10px] font-bold text-amber-300 uppercase tracking-widest block">Gold</span>
+          <span class="text-base font-extrabold text-white block mt-0.5">රු. 40,000</span>
+          <p class="text-[10px] text-slate-300 mt-1 leading-tight">Photo Booth Logo, 1 Free Ticket, Announcements</p>
+        </div>
+
+        <!-- Silver -->
+        <div class="glass-card sponsor-tier-card rounded-2xl p-3.5 border-slate-700">
+          <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest block">Silver</span>
+          <span class="text-base font-extrabold text-white block mt-0.5">රු. 20,000</span>
+          <p class="text-[10px] text-slate-300 mt-1 leading-tight">Screen Logo, WhatsApp promo, Vote of thanks</p>
+        </div>
+
+        <!-- Benefactor -->
+        <div class="glass-card sponsor-tier-card rounded-2xl p-3.5 border-slate-700">
+          <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Donor / Co-Sponsor</span>
+          <span class="text-base font-extrabold text-white block mt-0.5">රු. 10,000</span>
+          <p class="text-[10px] text-slate-300 mt-1 leading-tight">Batch benefactor acknowledgment & listing</p>
+        </div>
+      </div>
+
+      <div class="relative z-10 text-center mt-5">
+        <p id="sponsorCallout" class="text-[11px] text-slate-300 mb-3">ඔබගේ ආයතනයේ නම රාජකීය උත්සවයේ නිල අනුග්‍රාහකයෙකු ලෙස ප්‍රදර්ශනය කරන්න.</p>
+        <a class="sponsor-contact-link" href="https://chat.whatsapp.com/COD7LjbRAbdIoxB2L05WYJ" target="_blank" rel="noopener">
+          <span>💬</span>
+          <span id="sponsorContactLabel">අනුග්‍රාහකත්වය ගැන විමසන්න</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- RSVP TRIGGER BANNER -->
+    <section class="glass-card rounded-3xl p-6 text-center border-gold-400/40 shadow-2xl mb-12 relative overflow-hidden">
+      <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-gold-400/10 border border-gold-400/40 flex items-center justify-center text-2xl">
+        ✉️
+      </div>
+      <h3 class="text-lg sm:text-xl font-bold text-white mb-2">ඔබගේ සහභාගීත්වය තහවුරු කරන්න</h3>
+      <p class="text-xs text-slate-300 mb-6 max-w-sm mx-auto leading-relaxed">
+        ආසන වෙන්කිරීම් සහ සංවිධාන කටයුතු විධිමත් කරගැනීමට කරුණාකර ඔබගේ නම කල්තියා ලියාපදිංචි කරන්න.
+      </p>
+
+      <button 
+        onclick="openRsvpModal()"
+        class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider shadow-lg transition-transform active:scale-98 flex items-center justify-center gap-2"
+      >
+        <span>සහභාගීත්වය සටහන් කරන්න (Quick RSVP)</span>
+        <span>➡️</span>
+      </button>
+
+      <a
+        id="generalChatLink"
+        href="https://chat.whatsapp.com/GV4gVMjCmg9AoWJKWjXSZk"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-3 w-full min-h-12 py-3 px-6 rounded-2xl border border-emerald-400/50 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-200 font-bold text-sm transition flex items-center justify-center gap-2"
+      >
+        <span>💬</span>
+        <span id="generalChatLabel">WhatsApp සාමාන්‍ය Chat වෙත ඇතුළු වන්න</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="text-center py-6 border-t border-white/10 text-xs text-slate-400">
+      <p class="text-slate-300 font-semibold mb-1">මාධ්‍ය හා සම්බන්ධීකරණ ප්‍රධානී: අමිල ඉන්ද්‍රජිත් අහංගම</p>
+      <p class="mb-3">
+        දුරකථන / WhatsApp: 
+        <a href="https://wa.me/94710438487" target="_blank" class="text-gold-300 hover:underline font-mono">0710 438 487</a>
+      </p>
+      <div class="text-[11px] text-slate-500">
+        © 2026 THE ROYAL POND • Royal College Monaragala
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- TOUCH OF ROYAL THEME DETAILS -->
+  <div id="themeDetailsModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4" role="dialog" aria-modal="true" aria-labelledby="themeDetailsTitle">
+    <div class="theme-details-panel glass-card bg-royal-950/98 border border-gold-400/50 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative">
+      <button type="button" onclick="closeThemeDetails()" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center text-base" aria-label="Close theme details">✕</button>
+      <div class="pr-10">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-bold">Theme Details</span>
+        <h2 id="themeDetailsTitle" class="text-xl sm:text-2xl font-black text-white mt-1">👔 Touch of Royal</h2>
+        <p class="text-xs sm:text-sm text-amber-100/80 mt-2 leading-relaxed">රාජකීය අභිමානය සහිත අමතක නොවන අත්දැකීමක්</p>
+      </div>
+      <div class="theme-details-content mt-3">
+        <p><strong>"Touch of Royal"</strong> (රාජකීය අභිමානය) යන තේමාව මෙම උත්සවය සඳහා යොදාගෙන ඇත්තේ සාමාන්‍ය සාදයකින් ඔබ්බට ගිය, ගාම්භීර සහ උත්කර්ෂවත් අත්දැකීමක් සියලු දෙනාටම ලබාදීමේ අරමුණෙනි.</p>
+
+        <h4>1. වර්ණ සංකලනය සහ පරිසරය (Color Theme &amp; Ambience)</h4>
+        <ul>
+          <li><strong>වර්ණ තේමාව:</strong> ප්‍රධාන වශයෙන් ගැඹුරු රාජකීය නිල් (Deep Royal Blue) සහ උණුසුම් රන්වන් (Warm Gold/Amber) වර්ණ භාවිත කෙරේ.</li>
+          <li><strong>ආලෝකකරණය:</strong> LED Par Cans (Up-lighting) මඟින් රාජකීය නිල් සහ රන්වන් ආලෝකය මුසු වූ අලංකාර පරිසරයක් නිර්මාණය කෙරේ.</li>
+          <li><strong>වේදිකා ආලෝකය:</strong> Warm White (3200K–4000K) ආලෝකය යොදා ගනිමින් කථිකයින් සහ ගුරුවරුන්ගේ මුහුණු පැහැදිලිව පෙන්වා ඡායාරූප වලට උසස් පෙනුමක් ලබාදෙයි.</li>
+        </ul>
+
+        <h4>2. සාම්ප්‍රදායික සහ රාජකීය පිළිගැනීම (Grand Welcome)</h4>
+        <ul>
+          <li><strong>මඟුල් බෙර සහ වෙස් නැටුම්:</strong> ගුරුභවතුන් සහ සාමාජිකයින් ඇතුළු වන මොහොතේ සාම්ප්‍රදායික මඟුල් බෙර වාදන සහ වෙස් නැටුම් ශිල්පීන් පෙරටු කරගත් රාජකීය පිළිගැනීමක් පිරිනැමේ.</li>
+          <li><strong>සැරසිලි සහ Backdrop:</strong> Vintage Photo Booth එකක් සහ "Touch of Royal" තේමාවෙන් යුත් ප්‍රධාන Welcome Backdrop එකක් නිර්මාණය කෙරේ.</li>
+        </ul>
+
+        <h4>3. ගුරු උපහාර සහ ගෞරව දැක්වීම (Honor &amp; Respect)</h4>
+        <ul>
+          <li><strong>ගුරු උපහාර උළෙල:</strong> විශ්‍රාමික ගුරුවරුන් 10 දෙනාට විශේෂ උපහාර ඵලක සහ තිළිණ පිරිනැමේ.</li>
+          <li><strong>සාමාජික සමරු ලාංඡන:</strong> සෑම සාමාජිකයෙකුටම රාජකීය එකමුතුව සනිටුහන් කෙරෙන නිල Lapel Pin / Badge එකක් පිරිනැමේ.</li>
+        </ul>
+
+        <h4>4. ආගන්තුක සත්කාර සහ භෝජන සංග්‍රහය (Hospitality &amp; Dining)</h4>
+        <ul>
+          <li><strong>Round Table Layout:</strong> සාමාජිකයින්ට එකිනෙකා සමඟ කතාබස් කරමින් සුවපහසුවෙන් අසුන්ගත හැකි Round Table ක්‍රමයට ශාලාව සකස් කෙරේ.</li>
+          <li><strong>රාජකීය භෝජනය:</strong> Welcome Drinks සහ අතිවිශේෂ Buffet Dinner සංග්‍රහයක් පිරිනැමේ.</li>
+        </ul>
+
+        <h4>5. රාත්‍රී සාදය සහ විනෝදාස්වාදය (Entertainment &amp; After-Party)</h4>
+        <ul>
+          <li><strong>Moving Heads &amp; Haze Effects:</strong> Haze/Fog සහ වර්ණවත් Beam Lights මඟින් සාදයේ ආලෝක ධාරා කැපී පෙනෙන පරිදි සකස් කෙරේ.</li>
+          <li><strong>ගිනි නර්තනය සහ DJ:</strong> 80s/90s සංගීතයේ සිට සජීවී DJ සංගීතය සහ ගිනි නර්තන අංග මඟින් රාත්‍රිය උත්කර්ෂවත් කෙරේ.</li>
+        </ul>
+
+        <p class="mt-5 border-t border-white/10 pt-4 text-amber-100/90"><strong>කෙටියෙන් කිවහොත්, "Touch of Royal" යනු</strong> පාසල් මිතුදමේ බැඳීම සහ ගුරු උපහාරය ඉහළම ගෞරවයකින් හා අභිමානයකින් යුතුව සමරන රාජකීය අත්දැකීමකි.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEMBER BENEFITS AND WELFARE DETAILS -->
+  <div id="welfareDetailsModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4" role="dialog" aria-modal="true" aria-labelledby="welfareDetailsHeading">
+    <div class="welfare-details-panel glass-card bg-royal-950/98 border border-gold-400/50 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative">
+      <button type="button" onclick="closeWelfareDetails()" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center text-base" aria-label="Close member benefits details">✕</button>
+      <div class="pr-10">
+        <span id="welfareModalKicker" class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-bold">සාමාජික තොරතුරු</span>
+        <h2 id="welfareDetailsHeading" class="text-xl sm:text-2xl font-black text-white mt-1"><span aria-hidden="true">🤝</span> <span id="welfareModalTitle">සාමාජික ප්‍රතිලාභ සහ සුබසාධනය</span></h2>
+        <p id="welfareModalIntro" class="text-xs sm:text-sm text-amber-100/80 mt-2 leading-relaxed">අපේ සාමාජිකයින්, ගුරුභවතුන් සහ පාසල වෙනුවෙන් අපගේ කැපවීම.</p>
+      </div>
+      <div id="welfareDetailsContent" class="mt-3"></div>
+    </div>
+  </div>
+
+  <!-- RSVP FORM MODAL -->
+  <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all">
+    <div class="glass-card bg-royal-950/95 border border-gold-400/40 w-full max-w-md rounded-3xl p-6 shadow-2xl relative text-left">
+      
+      <button 
+        onclick="closeRsvpModal()" 
+        class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center text-sm"
+        aria-label="Close Modal"
+      >
+        ✕
+      </button>
+
+      <div class="flex items-center gap-2 mb-1">
+        <span class="text-lg">👑</span>
+        <h4 class="text-base font-bold text-white">RSVP තහවුරු කිරීම</h4>
+      </div>
+      <p class="text-xs text-gold-300/80 mb-5">THE ROYAL POND - නිල් මානෙල් රාත්‍රිය 2026</p>
+
+      <form id="rsvpForm" onsubmit="submitRsvp(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            සම්පූර්ණ නම *
+          </label>
+          <input 
+            type="text" 
+            id="fName" 
+            required 
+            placeholder="ඔබගේ නම ඇතුළත් කරන්න" 
+            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
+          >
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            දුරකථන අංකය *
+          </label>
+          <input 
+            type="tel" 
+            id="fPhone" 
+            required 
+            placeholder="07X XXX XXXX" 
+            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
+          >
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            පාසල් කණ්ඩායම / Batch *
+          </label>
+          <select
+            id="rsvpBatch"
+            required
+            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
+          >
+            <option value="Class A">Class A</option>
+            <option value="Class B">Class B</option>
+            <option value="Class C">Class C</option>
+            <option value="Class D">Class D</option>
+            <option value="Class E">Class E</option>
+            <option value="ART">ART</option>
+            <option value="COMMERCE">COMMERCE</option>
+            <option value="SCIENCE">SCIENCE</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            සහභාගීත්වය *
+          </label>
+          <select
+            id="rsvpAttending"
+            required
+            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
+          >
+            <option value="Definitely attending (Confirm)">Definitely attending (Confirm)</option>
+            <option value="Not sure yet (Tentative)">Not sure yet (Tentative)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            යෝජනා හෝ අදහස් (විකල්ප)
+          </label>
+          <textarea 
+            id="fNote" 
+            rows="2" 
+            placeholder="අමතර විස්තර..." 
+            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2 text-xs text-white outline-none transition"
+          ></textarea>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg transition active:scale-98"
+        >
+          Google Sheet වෙත සුරකින්න
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      si: {
+        portalTag: 'රාජකීය සහෝදරත්වයේ ගුරු උපහාර සැඳෑව',
+        enter: 'Enter',
+        eventIntro: 'වසර ගණනාවකට පසු අපේම සහෝදරත්වයේ මතකයන් යළි අලුත් කරගනිමින්, අපට මඟපෙන්වූ විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් හා පියවරුන්ට උපහාර පුදන මහා සැඳෑව.',
+        countdown: 'උත්සවයට ඉතිරි කාලය',
+        day: 'දින', hour: 'පැය', minute: 'මිනිත්තු', second: 'තත්පර',
+        place: 'මොණරාගලදී', time: 'ප.ව. 4:30 සිට ඉදිරියට',
+        date: 'දිනය', city: 'නගරය', theme: 'තේමාව',
+        highlights: 'රාත්‍රියේ විශේෂාංග', highlightsIntro: 'රාජකීය අත්දැකීම් සමඟින් වර්ණවත් වන හෝරා කිහිපය',
+        highlight1: 'සාම්ප්‍රදායික රාජකීය පිළිගැනීම', highlight1Desc: 'මඟුල් බෙර වාදන හා වෙස් නැටුම් සමඟින් උත්කර්ෂවත් පිළිගැනීම.', highlight2: 'ගුරු උපහාර උත්තමාචාරය', highlight2Desc: 'විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් හා පියවරුන් 10 දෙනෙකුට උපහාර පිදීම.', highlight3: 'Live DJ & Retro Dance Floor', highlight3Desc: '80s/90s Sinhala Retro Pop, Classics, Baila සහ Club beats සංගීතය.', highlight4: 'රාජකීය රාත්‍රී භෝජන සංග්‍රහය', highlight4Desc: 'අතිවිශේෂ Buffet Dinner, Welcome Drinks සහ සංග්‍රහයන්.', highlight5: 'Vintage Photo Studio & Booth', highlight5Desc: 'පාසල් මිතුරන් සමඟ මතක සටහන් ගැනීමට Red Carpet Photo Backdrop.',
+        platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
+        welfare: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareModalTitle: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareButtonIntro: 'සාමාජිකයින්ට, ගුරුභවතුන්ට සහ පාසලට හිමිවන ප්‍රතිලාභ දැනගැනීමට මෙතැනින් බලන්න.', welfareButtonAction: 'සාමාජික ප්‍රතිලාභ බලන්න', welfareModalKicker: 'සාමාජික තොරතුරු', welfareModalIntro: 'අපේ සාමාජිකයින්, ගුරුභවතුන් සහ පාසල වෙනුවෙන් අපගේ කැපවීම.', welfareContent: `<h4 class="font-bold text-gold-200">1. සාමාජිකයින්ට හිමිවන දේ (Member Benefits)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>ගුරු උපහාර උළෙල:</strong> අපට මඟපෙන්වූ විශ්‍රාමික ගුරුභවතුන් 10 දෙනාට කෙරෙන රාජකීය උපහාර උළෙලට සහභාගී වීමේ අවස්ථාව.</li><li><strong>රාජකීය රාත්‍රී භෝජන සංග්‍රහය:</strong> අතිවිශේෂ Buffet Dinner සහ Welcome Drinks.</li><li><strong>සංගීතය සහ නර්තනය:</strong> 80s/90s Sinhala Retro, Baila සහ නවීන DJ සංගීතය සමඟ සජීවී Dance Floor අත්දැකීම සහ ගිනි නර්තන සංදර්ශන.</li><li><strong>සමරු මතක සටහන්:</strong> විශේෂ Vintage Photo Booth අත්දැකීම සහ උසස් තත්ත්වයේ Media Coverage (ඡායාරූප/වීඩියෝ).</li><li><strong>නිල සමරු ලාංඡනය:</strong> සෑම සාමාජිකයෙකුටම පිරිනැමෙන නිල රාජකීය සමරු ලාංඡනය (Member Pin / Badge).</li></ul><h4 class="font-bold text-gold-200">2. පාසල සහ ගුරුභවතුන් වෙනුවෙන් (For Teachers & Alma Mater)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>ගුරු උපහාර පිදීම:</strong> අපගේ පාසල් දිවිය සාර්ථක කරලීමට කැපවූ විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් සහ පියවරුන් 10 දෙනෙකුට උපහාර ඵලක සහ විශේෂ තිළිණ පිරිනැමීම.</li><li><strong>සහෝදරත්වයේ බැඳීම යළි තහවුරු කිරීම:</strong> පාසල් මිතුදම අලුත් කරගනිමින් ඉදිරියේදී පාසලේ සංවර්ධනය වෙනුවෙන් ශක්තිමත් ආදි ශිෂ්‍ය පදනමක් ගොඩනැගීම.</li></ul><h4 class="font-bold text-gold-200">3. සාමාජික සුබසාධන අරමුදල (Members' Welfare Fund)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>හෙට දවස වෙනුවෙන් ශක්තියක්:</strong> මෙම උත්සවයෙන් පසු ඉතිරි වන සියලුම ශේෂ මුදල්, ආදි ශිෂ්‍ය සංගමයේ ස්ථිර <strong>"සාමාජික සුබසාධන අරමුදලක්"</strong> පිහිටුවීමට බැර කෙරේ.</li><li><strong>හදිසි සහන සහ ආධාර:</strong> අපේම සාමාජිකයෙකුට මුහුණදීමට සිදුවන හදිසි අසනීපයකදී, හදිසි ආපදාවකදී හෝ වෙනත් ඕනෑම අත්‍යවශ්‍ය අවස්ථාවකදී පිහිට විය හැකි ආරක්ෂිත අරමුදලක් ලෙස මෙය ක්‍රියාත්මක වේ.</li></ul>`, sponsorship: 'අනුග්‍රාහක දායකත්ව', sponsorshipIntro: 'උත්සවය සාර්ථක කරගැනීමට අත්වැලක් වන්න', sponsorCallout: 'ඔබගේ ආයතනයේ නම රාජකීය උත්සවයේ නිල අනුග්‍රාහකයෙකු ලෙස ප්‍රදර්ශනය කරන්න.', sponsorContact: 'අනුග්‍රාහකත්වය ගැන විමසන්න',
+        rsvpTitle: 'ඔබගේ සහභාගීත්වය තහවුරු කරන්න', rsvpIntro: 'ආසන වෙන්කිරීම් සහ සංවිධාන කටයුතු විධිමත් කරගැනීමට කරුණාකර ඔබගේ නම කල්තියා ලියාපදිංචි කරන්න.',
+        rsvpButton: 'සහභාගීත්වය සටහන් කරන්න (Quick RSVP)', generalChat: 'WhatsApp සාමාන්‍ය Chat වෙත ඇතුළු වන්න', modalTitle: 'RSVP තහවුරු කිරීම',
+        fullName: 'සම්පූර්ණ නම *', phone: 'දුරකථන අංකය *', batch: 'පාසල් කණ්ඩායම / Batch', status: 'සහභාගීත්වය', notes: 'යෝජනා හෝ අදහස් (විකල්ප)', send: 'Google Sheet වෙත සුරකින්න', footerRole: 'මාධ්‍ය හා සම්බන්ධීකරණ ප්‍රධානී: අමිල ඉන්ද්‍රජිත් අහංගම', footerPhone: 'දුරකථන / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
+        namePlaceholder: 'ඔබගේ නම ඇතුළත් කරන්න', notesPlaceholder: 'අමතර විස්තර...', confirm: 'නියත වශයෙන්ම සහභාගී වෙමි (Confirm)', tentative: 'තවමත් ස්ථිර නැත (Tentative)', audioOff: 'OFF', audioOn: 'ON'
+      },
+      en: {
+        portalTag: 'A Royal Evening of Gratitude and Brotherhood',
+        enter: 'Enter',
+        eventIntro: 'A grand evening to renew our lifelong brotherhood and honour the beloved retired teachers who guided us.',
+        countdown: 'Time Until the Celebration', day: 'Days', hour: 'Hours', minute: 'Minutes', second: 'Seconds',
+        place: 'In Monaragala', time: 'From 4:30 PM onwards', date: 'Date', city: 'City', theme: 'Theme',
+        highlights: 'Evening Highlights', highlightsIntro: 'A few memorable hours filled with royal experiences',
+        highlight1: 'Traditional Royal Welcome', highlight1Desc: 'A grand welcome with ceremonial drums and Kandyan dance.', highlight2: 'Teachers’ Tribute Ceremony', highlight2Desc: 'A special tribute to ten beloved retired teachers.', highlight3: 'Live DJ & Retro Dance Floor', highlight3Desc: '80s/90s Sinhala retro pop, classics, baila, and club beats.', highlight4: 'Royal Dinner Banquet', highlight4Desc: 'An exclusive buffet dinner, welcome drinks, and refreshments.', highlight5: 'Vintage Photo Studio & Booth', highlight5Desc: 'A red-carpet photo backdrop to capture memories with friends.',
+        platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
+        welfare: 'Member Benefits and Welfare', welfareModalTitle: 'Member Benefits and Welfare', welfareButtonIntro: 'View the benefits available to members, teachers and our school.', welfareButtonAction: 'View member benefits', welfareModalKicker: 'Member Information', welfareModalIntro: 'Our commitment to our members, teachers and alma mater.', welfareContent: `<h4 class="font-bold text-gold-200">1. Member Benefits</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Teachers' Felicitation:</strong> The opportunity to attend the royal felicitation ceremony for the 10 retired teachers who guided us.</li><li><strong>Royal Dinner:</strong> An exceptional buffet dinner and welcome drinks.</li><li><strong>Music and Dance:</strong> A live dance floor experience with 80s/90s Sinhala retro, baila and modern DJ music, together with fire dance performances.</li><li><strong>Commemorative Memories:</strong> A special vintage photo booth experience and high-quality media coverage through photographs and video.</li><li><strong>Official Commemorative Badge:</strong> An official royal member pin or badge presented to every member.</li></ul><h4 class="font-bold text-gold-200">2. For Teachers & Alma Mater</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Teacher Felicitation:</strong> Felicitation plaques and special gifts for 10 beloved retired teachers who dedicated themselves to our school lives.</li><li><strong>Strengthening Brotherhood:</strong> Renewing our school friendships and building a strong alumni foundation for the future development of the school.</li></ul><h4 class="font-bold text-gold-200">3. Members' Welfare Fund</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Strength for tomorrow:</strong> All remaining funds after the event will be credited to establish a permanent <strong>"Members' Welfare Fund"</strong> within the alumni association.</li><li><strong>Emergency relief and support:</strong> The fund will provide assistance to our members in cases of sudden illness, emergencies or other essential needs.</li></ul>`, sponsorship: 'Sponsorship Opportunities', sponsorshipIntro: 'Support us in making this celebration a success', sponsorCallout: "Display your organization's name as an official sponsor of the royal celebration.", sponsorContact: 'Ask about sponsorship',
+        rsvpTitle: 'Confirm Your Attendance', rsvpIntro: 'Please register your name in advance to help us arrange seating and event preparations.',
+        rsvpButton: 'Record Attendance (Quick RSVP)', generalChat: 'Enter WhatsApp General Chat', modalTitle: 'RSVP Confirmation',
+        fullName: 'Full Name *', phone: 'Phone Number *', batch: 'School Batch', status: 'Attendance', notes: 'Suggestions or Notes (Optional)', send: 'Save to Google Sheet', footerRole: 'Media and Coordination Lead: Amila Indrajith Ahangama', footerPhone: 'Phone / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
+        namePlaceholder: 'Enter your name', notesPlaceholder: 'Additional details...', confirm: 'Definitely attending (Confirm)', tentative: 'Not sure yet (Tentative)', audioOff: 'OFF', audioOn: 'ON'
+      }
+    };
+
+    const languageTextTargets = {
+      portalTag: '#portalCenterStage > p', enter: '#btnEnterPortal span:last-child',
+      eventIntro: 'main > header > p', countdown: '[aria-label="Countdown Timer"] .text-gold-300',
+      day: '#days + span', hour: '#hours + span', minute: '#minutes + span', second: '#seconds + span',
+      place: '[aria-label="Countdown Timer"] .text-gold-200', time: '[aria-label="Countdown Timer"] .text-slate-300 > span:last-child',
+      date: '.grid.grid-cols-3 > div:nth-child(1) span:nth-of-type(2)', city: '.grid.grid-cols-3 > div:nth-child(2) span:nth-of-type(2)', theme: '.grid.grid-cols-3 > div:nth-child(3) span:nth-of-type(2)',
+      highlights: 'main section:nth-of-type(3) h3 span:nth-child(2)', highlightsIntro: 'main section:nth-of-type(3) h3 + p',
+      welfare: '#welfareButtonTitle', welfareModalTitle: '#welfareModalTitle', welfareButtonIntro: '#welfareButtonIntro', welfareButtonAction: '#welfareButtonAction', welfareModalKicker: '#welfareModalKicker', welfareModalIntro: '#welfareModalIntro', sponsorship: 'main section:nth-of-type(5) h3', sponsorshipIntro: 'main section:nth-of-type(5) h3 + p', sponsorCallout: '#sponsorCallout', sponsorContact: '#sponsorContactLabel',
+      rsvpTitle: 'main section:nth-of-type(6) h3', rsvpIntro: 'main section:nth-of-type(6) h3 + p', rsvpButton: 'main section:nth-of-type(6) button span:first-child', generalChat: '#generalChatLabel',
+      modalTitle: '#rsvpModal h4', fullName: '#rsvpForm label:nth-of-type(1)', phone: '#rsvpForm label:nth-of-type(2)', batch: '#rsvpForm label:nth-of-type(3)', status: '#rsvpForm label:nth-of-type(4)', notes: '#rsvpForm label:nth-of-type(5)', send: '#rsvpForm button[type="submit"]', footerRole: 'footer p:first-child', footerPhone: 'footer p:nth-child(2)', copyright: 'footer div'
+    };
+
+    function applyLanguage(language) {
+      const selected = translations[language] || translations.si;
+      Object.entries(languageTextTargets).forEach(([key, selector]) => {
+        const element = document.querySelector(selector);
+        if (element && selected[key]) element.textContent = selected[key];
+      });
+      document.getElementById('fName').placeholder = selected.namePlaceholder;
+      document.getElementById('fNote').placeholder = selected.notesPlaceholder;
+      document.querySelector('#rsvpAttending option[value="Definitely attending (Confirm)"]').textContent = selected.confirm;
+      document.querySelector('#rsvpAttending option[value="Not sure yet (Tentative)"]').textContent = selected.tentative;
+      const detailSelectors = ['main section:nth-of-type(3) .space-y-3 > div:nth-child(1) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(2) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(3) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(4) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(5) h4'];
+      const detailDescSelectors = ['main section:nth-of-type(3) .space-y-3 > div:nth-child(1) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(2) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(3) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(4) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(5) p'];
+      [selected.highlight1, selected.highlight2, selected.highlight3, selected.highlight4, selected.highlight5].forEach((text, index) => { const element = document.querySelector(detailSelectors[index]); if (element) element.textContent = text; });
+      [selected.highlight1Desc, selected.highlight2Desc, selected.highlight3Desc, selected.highlight4Desc, selected.highlight5Desc].forEach((text, index) => { const element = document.querySelector(detailDescSelectors[index]); if (element) element.textContent = text; });
+      document.getElementById('welfareDetailsContent').innerHTML = selected.welfareContent;
+      document.querySelector('footer p:nth-child(2)').innerHTML = `${selected.footerPhone} <a href="https://wa.me/94710438487" target="_blank" class="text-gold-300 hover:underline font-mono">0710 438 487</a>`;
+      const packageSelectors = ['main section:nth-of-type(5) > div.grid > div:nth-child(1)', 'main section:nth-of-type(5) > div.grid > div:nth-child(2)', 'main section:nth-of-type(5) > div.grid > div:nth-child(3)', 'main section:nth-of-type(5) > div.grid > div:nth-child(4)'];
+      [[selected.platinum, selected.platinumDesc], [selected.gold, selected.goldDesc], [selected.silver, selected.silverDesc], [selected.donor, selected.donorDesc]].forEach(([title, description], index) => { const card = document.querySelector(packageSelectors[index]); if (card) { card.querySelector('span:first-child').textContent = title; card.querySelector('p').textContent = description; } });
+      document.getElementById('audioToggleButton').setAttribute('aria-label', isPlaying ? 'Mute Background Music' : 'Unmute Background Music');
+      document.getElementById('audioToggleButton').setAttribute('title', isPlaying ? 'Mute Background Music' : 'Unmute Background Music');
+      document.documentElement.lang = language === 'en' ? 'en' : 'si';
+      localStorage.setItem('royalPondLanguage', language);
+    }
+
+    const languageControl = document.getElementById('languageControl');
+    languageControl.value = localStorage.getItem('royalPondLanguage') || 'si';
+    languageControl.addEventListener('change', (event) => applyLanguage(event.target.value));
+
+    // Locally generated luxury piano ambience and audio state
+    const audioLabel = document.getElementById("audioLabel");
+    const audioToggleButton = document.getElementById("audioToggleButton");
+    let isPlaying = false;
+    let pianoContext;
+    let pianoTimer;
+    let pianoStep = 0;
+    const pianoPattern = [
+      [196.00, 246.94, 293.66, 392.00],
+      [174.61, 220.00, 261.63, 349.23],
+      [220.00, 277.18, 329.63, 440.00],
+      [164.81, 207.65, 246.94, 329.63],
+      [196.00, 246.94, 293.66, 392.00],
+      [220.00, 261.63, 329.63, 392.00]
+    ];
+    const soloPianoSong = [
+      [523.25, 587.33, 659.25, 587.33, 523.25, 493.88],
+      [493.88, 523.25, 587.33, 659.25, 587.33, 523.25],
+      [440.00, 493.88, 523.25, 587.33, 523.25, 493.88],
+      [392.00, 440.00, 493.88, 523.25, 493.88, 440.00],
+      [523.25, 659.25, 698.46, 659.25, 587.33, 523.25],
+      [493.88, 440.00, 392.00, 440.00, 493.88, 523.25]
+    ];
+
+    function playPianoNote(frequency, startTime, duration, volume) {
+      const oscillator = pianoContext.createOscillator();
+      const gain = pianoContext.createGain();
+      oscillator.type = "triangle";
+      oscillator.frequency.setValueAtTime(frequency, startTime);
+      gain.gain.setValueAtTime(0.0001, startTime);
+      gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+      oscillator.connect(gain).connect(pianoContext.destination);
+      oscillator.start(startTime);
+      oscillator.stop(startTime + duration + 0.05);
+    }
+
+    function playPianoBar() {
+      const startTime = pianoContext.currentTime + 0.05;
+      const chord = pianoPattern[pianoStep % pianoPattern.length];
+      chord.forEach((frequency, index) => {
+        playPianoNote(frequency, startTime + index * 0.18, 2.9, index === 0 ? 0.03 : 0.019);
+      });
+      soloPianoSong[pianoStep % soloPianoSong.length].forEach((frequency, index) => {
+        playPianoNote(frequency, startTime + 0.65 + index * 0.34, 1.15, 0.024);
+      });
+      playPianoNote(chord[0] / 2, startTime, 3.2, 0.038);
+      pianoStep += 1;
+    }
+
+    function startPianoMusic() {
+      if (!pianoContext) {
+        pianoContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      pianoContext.resume();
+      clearInterval(pianoTimer);
+      playPianoBar();
+      pianoTimer = setInterval(playPianoBar, 3200);
+      isPlaying = true;
+      updateAudioUI(true);
+    }
+
+    function stopPianoMusic() {
+      clearInterval(pianoTimer);
+      pianoTimer = null;
+      isPlaying = false;
+      if (pianoContext) pianoContext.suspend();
+      updateAudioUI(false);
+    }
+    applyLanguage(languageControl.value);
+
+    // Open Royal 3D Gates & Trigger Sound
+    function openRoyalGates() {
+      const portal = document.getElementById("portalContainer");
+      portal.classList.add("opened");
+
+      startPianoMusic();
+
+      // Hide portal container from pointer events after animation completion
+      setTimeout(() => {
+        portal.style.opacity = "0";
+        portal.style.visibility = "hidden";
+      }, 1400);
+    }
+
+    // Toggle Audio on Click
+    function toggleAudio() {
+      if (isPlaying) {
+        stopPianoMusic();
+      } else {
+        startPianoMusic();
+      }
+    }
+
+    function updateAudioUI(playing) {
+      audioLabel.textContent = playing ? "🔊" : "🔇";
+      audioToggleButton.setAttribute("aria-label", playing ? "Mute Background Music" : "Unmute Background Music");
+      audioToggleButton.setAttribute("title", playing ? "Mute Background Music" : "Unmute Background Music");
+    }
+
+    // Countdown Timer Logic
+    const eventTime = new Date("2026-11-28T16:30:00+05:30").getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = eventTime - now;
+
+      if (distance > 0) {
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(d).padStart(2, '0');
+        document.getElementById("hours").innerText = String(h).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+      } else {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+      }
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Modal Control Functions
+    function openThemeDetails() {
+      const modal = document.getElementById('themeDetailsModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+      modal.querySelector('button').focus();
+    }
+
+    function closeThemeDetails() {
+      const modal = document.getElementById('themeDetailsModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function openWelfareDetails() {
+      const modal = document.getElementById('welfareDetailsModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+      modal.querySelector('button').focus();
+    }
+
+    function closeWelfareDetails() {
+      const modal = document.getElementById('welfareDetailsModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function openRsvpModal() {
+      const modal = document.getElementById("rsvpModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeRsvpModal() {
+      const modal = document.getElementById("rsvpModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeThemeDetails();
+        closeWelfareDetails();
+        closeRsvpModal();
+      }
+    });
+
+    // Paste the deployed Google Apps Script Web App URL here.
+    const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx4MdDxdu7zedYS-aOz19j_qab8_0gpmmMXKMB_X9X_36zIlrGP6VbjZwEOBv1F8oHEJg/exec';
+
+    async function submitRsvp(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("fName").value.trim();
+      const phone = document.getElementById("fPhone").value.trim();
+      const batch = document.getElementById("rsvpBatch").value;
+      const status = document.getElementById("rsvpAttending").value;
+      const note = document.getElementById("fNote").value.trim();
+
+      if (GOOGLE_SHEETS_WEB_APP_URL.includes('PASTE_')) {
+        alert('Google Sheet connection එක තවම සකස් කර නැත. Apps Script Web App URL එක index.html තුළ ඇතුළත් කරන්න.');
+        return;
+      }
+
+      const submitButton = document.querySelector('#rsvpForm button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'සුරකිමින්...';
+
+      try {
+        await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ name, phone, batch, status, note, submittedAt: new Date().toISOString() })
+        });
+        alert('ඔබගේ ලියාපදිංචි තොරතුරු සාර්ථකව සුරකින ලදී. ස්තුතියි!');
+        document.getElementById('rsvpForm').reset();
+        closeRsvpModal();
+      } catch (error) {
+        alert('තොරතුරු සුරැකීමට නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = translations[document.getElementById('languageControl').value].send;
+      }
+    }
+  </script>
+</body>
+</html>
