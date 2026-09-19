@@ -416,6 +416,62 @@
       background: #86efac;
     }
 
+    .brotherhood-feature {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% -15%, rgba(236, 72, 153, 0.2), transparent 38%),
+        linear-gradient(145deg, rgba(30, 16, 50, 0.98), rgba(8, 15, 39, 0.98) 58%, rgba(21, 42, 71, 0.96));
+      border: 1px solid rgba(244, 114, 182, 0.42);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42), 0 0 38px rgba(236, 72, 153, 0.12);
+    }
+
+    .brotherhood-feature::before {
+      content: '';
+      position: absolute;
+      inset: 0.45rem;
+      border: 1px solid rgba(251, 207, 232, 0.18);
+      border-radius: 1.35rem;
+      pointer-events: none;
+    }
+
+    .brotherhood-logo {
+      width: 7rem;
+      height: 7rem;
+      object-fit: contain;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 0 30px rgba(244, 114, 182, 0.3);
+    }
+
+    .brotherhood-message {
+      color: #e2e8f0;
+      font-size: 0.74rem;
+      line-height: 1.85;
+    }
+
+    .brotherhood-message h4 {
+      margin: 1rem 0 0.35rem;
+      color: #f9a8d4;
+      font-size: 0.85rem;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .brotherhood-message p {
+      margin: 0.55rem 0;
+    }
+
+    .brotherhood-message ul {
+      padding-left: 1.15rem;
+      list-style: disc;
+    }
+
+    .brotherhood-message strong {
+      color: #fef3c7;
+    }
+
     #themeDetailsModal {
       overscroll-behavior: contain;
     }
@@ -1207,8 +1263,8 @@
 
     <!-- RSVP TRIGGER BANNER -->
     <section id="rsvpSection" class="glass-card rounded-3xl p-6 text-center border-gold-400/40 shadow-2xl mb-12 relative overflow-hidden">
-      <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-gold-400/10 border border-gold-400/40 flex items-center justify-center text-2xl">
-        ✉️
+      <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-slate-950 border-2 border-gold-400/60 flex items-center justify-center overflow-hidden shadow-[0_0_24px_rgba(245,158,11,0.28)]">
+        <img src="Code_Generated_Image.gif" alt="Blue water lily" class="w-full h-full object-cover">
       </div>
       <h3 class="text-lg sm:text-xl font-bold text-white mb-2">ඔබගේ සහභාගීත්වය තහවුරු කරන්න</h3>
       <p class="text-xs text-slate-300 mb-6 max-w-sm mx-auto leading-relaxed">
@@ -1234,6 +1290,33 @@
         <span id="generalChatLabel">WhatsApp සාමාන්‍ය Chat වෙත ඇතුළු වන්න</span>
         <span aria-hidden="true">↗</span>
       </a>
+    </section>
+
+    <!-- 86 EKATHUWA BROTHERHOOD INVITATION -->
+    <section id="brotherhoodSection" class="brotherhood-feature rounded-3xl p-5 sm:p-6 mb-10">
+      <div class="relative z-10 text-center">
+        <img src="86_ekathuwa.gif" alt="86 එකතුව Monaragala logo" class="brotherhood-logo mx-auto">
+        <span class="mt-4 inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-pink-200/80">🤝 86 එකතුව</span>
+        <h3 id="brotherhoodTitle" class="mt-2 text-xl sm:text-2xl font-black text-white">පාසල් සීමාවන්ගෙන් ඔබ්බට ගිය, මොණරාගල සහෝදරත්වයේ අභිමානවත් ආදර්ශය</h3>
+        <p id="brotherhoodIntro" class="mt-2 text-xs text-pink-100/80">අපේ අසල්වැසි මිතුරන්ට ආදරයෙන් කරන විශේෂ ආරාධනය.</p>
+      </div>
+      <div id="brotherhoodMessage" class="brotherhood-message relative z-10 mt-5 border-t border-pink-200/10 pt-4">
+        <p>ආදරණීය සහෝදරවරුනි,</p>
+        <p>අපේ පාසල් කාලයේ අතීතය ආපසු හැරී බලද්දී අපට නිහතමානීව ආඩම්බර විය හැකි සුවිශේෂී පරිච්ඡේදයක් තියෙනවා.</p>
+        <p>ඉස්කෝල අතර නොයෙක් දේවලට බෙදිලා වාද විවාද ඇතිවෙද්දී, ඒ සියල්ල වෙනස් කරමින් මොණරාගල කිසිවෙකුත් නොකරපු පෙරළියක් මුලින්ම කළේ <strong>2002-2005 අපේ කණ්ඩායමයි</strong>.</p>
+        <p><strong>"86 එකතුව"</strong> ගැන අමුතුවෙන් කියන්න ඕන නෑනේ...</p>
+        <ul>
+          <li>ඔක්කොම ඇන කොටාගනිද්දි BIG මැච් බලන්න අපි දෙගොල්ලො ගියේ එකට!</li>
+          <li>අපේ අයියලා මල්ලිලා එක්ක අපි මැච් ගහද්දි පිට්ටනිය දෙවනත් වෙන්න SUPPORT එක දුන්නේ ඒ අපේ උන්!</li>
+          <li>ප්‍රජාශාලාවේ කරපු අපේ මුල්ම GET-TOGETHER එක මතකද? දෙගොල්ලොම එකට එකතු වෙච්ච මොණරාගල මුල්ම ඓතිහාසික අවස්ථාව!</li>
+        </ul>
+        <p>කවුරුවත් නොකරපු දේවල් මුලින්ම පටන් ගත්තේ අපි කියන්න වෙනත් සාක්ෂි මොකටද?</p>
+        <p>ඉතින්, අපේම දිස්ත්‍රික්කයේ අසල්වාසී මිතුරන් වූ <strong>මොණරාගල මහානාම විදුහලේ අපේ සහෝදරවරුන්ව</strong> අපේ මේ ගමනට ආරාධිතයන් ලෙස එක්කර ගන්න හිතුවේ නිකම්ම නෙවෙයි. ප්‍රබල අනුග්‍රාහකත්වයක් සහ සහෝදරත්වයේ ඉහළම ගෞරවයත් එක්කයි.</p>
+        <p>එදා අපි බිඳහෙළපු ඒ පවුරු සහ ගොඩනගපු ඒ සුහද සංස්කෘතිය, අද මේ උත්සවය සාර්ථක කරගන්න අපිට තියෙන ලොකුම හයියක්. කිසිම බෙදීමක් නැතුව, කිසිම ප්‍රශ්නයක් ඇති නොවෙන්න, මේ සොඳුරු බැඳීම තවත් පරිස්සමෙන් ඉස්සරහට අරන් යන්න අපිට පුළුවන්.</p>
+        <p><strong>මුලින්ම මේ පාර කැපුවේ අපි! හැමෝටම ආදර්ශයක් දුන්නේ අපි!</strong></p>
+        <p>ඒ නිසා, එදා පෙන්වපු ඒ පරිණත සහෝදරත්වය තවත් ශක්තිමත් කරගෙන, <strong>"THE ROYAL POND - නිල් මානෙල් රාත්‍රිය 2026"</strong> උත්කර්ෂවත් ලෙස ජයග්‍රහණය කරවන්න එකාවන්ව අත්වැල් බැඳගනිමු.</p>
+        <p class="text-center text-base font-black text-pink-200">අපි එකතු වුණොත් නොකළ හැකි දෙයක් නැත!</p>
+      </div>
     </section>
 
     <!-- FOOTER SECTION -->
@@ -1428,6 +1511,7 @@
         welfare: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareModalTitle: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareButtonIntro: 'සාමාජිකයින්ට, ගුරුභවතුන්ට සහ පාසලට හිමිවන ප්‍රතිලාභ දැනගැනීමට මෙතැනින් බලන්න.', welfareButtonAction: 'සාමාජික ප්‍රතිලාභ බලන්න', welfareModalKicker: 'සාමාජික තොරතුරු', welfareModalIntro: 'අපේ සාමාජිකයින්, ගුරුභවතුන් සහ පාසල වෙනුවෙන් අපගේ කැපවීම.', welfareContent: `<h4 class="font-bold text-gold-200">1. සාමාජිකයින්ට හිමිවන දේ (Member Benefits)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>ගුරු උපහාර උළෙල:</strong> අපට මඟපෙන්වූ විශ්‍රාමික ගුරුභවතුන් 10 දෙනාට කෙරෙන රාජකීය උපහාර උළෙලට සහභාගී වීමේ අවස්ථාව.</li><li><strong>රාජකීය රාත්‍රී භෝජන සංග්‍රහය:</strong> අතිවිශේෂ Buffet Dinner සහ Welcome Drinks.</li><li><strong>සංගීතය සහ නර්තනය:</strong> 80s/90s Sinhala Retro, Baila සහ නවීන DJ සංගීතය සමඟ සජීවී Dance Floor අත්දැකීම සහ ගිනි නර්තන සංදර්ශන.</li><li><strong>සමරු මතක සටහන්:</strong> විශේෂ Vintage Photo Booth අත්දැකීම සහ උසස් තත්ත්වයේ Media Coverage (ඡායාරූප/වීඩියෝ).</li><li><strong>නිල සමරු ලාංඡනය:</strong> සෑම සාමාජිකයෙකුටම පිරිනැමෙන නිල රාජකීය සමරු ලාංඡනය (Member Pin / Badge).</li></ul><h4 class="font-bold text-gold-200">2. පාසල සහ ගුරුභවතුන් වෙනුවෙන් (For Teachers & Alma Mater)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>ගුරු උපහාර පිදීම:</strong> අපගේ පාසල් දිවිය සාර්ථක කරලීමට කැපවූ විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් සහ පියවරුන් 10 දෙනෙකුට උපහාර ඵලක සහ විශේෂ තිළිණ පිරිනැමීම.</li><li><strong>සහෝදරත්වයේ බැඳීම යළි තහවුරු කිරීම:</strong> පාසල් මිතුදම අලුත් කරගනිමින් ඉදිරියේදී පාසලේ සංවර්ධනය වෙනුවෙන් ශක්තිමත් අප පදනමක් ගොඩනැගීම.</li></ul><h4 class="font-bold text-gold-200">3. සාමාජික සුබසාධන අරමුදල (Members' Welfare Fund)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>හෙට දවස වෙනුවෙන් ශක්තියක්:</strong> මෙම උත්සවයෙන් පසු ඉතිරි වන සියලුම ශේෂ මුදල්, අපගේ ස්ථිර <strong>"සාමාජික සුබසාධන අරමුදලක්"</strong> පිහිටුවීමට බැර කෙරේ.</li><li><strong>හදිසි සහන සහ ආධාර:</strong> අපේම සාමාජිකයෙකුට මුහුණදීමට සිදුවන හදිසි අසනීපයකදී, හදිසි ආපදාවකදී හෝ වෙනත් ඕනෑම අත්‍යවශ්‍ය අවස්ථාවකදී පිහිට විය හැකි ආරක්ෂිත අරමුදලක් ලෙස මෙය ක්‍රියාත්මක වේ.</li></ul>`, sponsorship: 'අනුග්‍රාහක දායකත්ව', sponsorshipIntro: 'උත්සවය සාර්ථක කරගැනීමට අත්වැලක් වන්න', sponsorCallout: 'ඔබගේ ආයතනයේ නම රාජකීය උත්සවයේ නිල අනුග්‍රාහකයෙකු ලෙස ප්‍රදර්ශනය කරන්න.', sponsorContact: 'අනුග්‍රාහකත්වය ගැන විමසන්න',
         rsvpTitle: 'ඔබගේ සහභාගීත්වය තහවුරු කරන්න', rsvpIntro: 'ආසන වෙන්කිරීම් සහ සංවිධාන කටයුතු විධිමත් කරගැනීමට කරුණාකර ඔබගේ නම කල්තියා ලියාපදිංචි කරන්න.',
         communityTitle: 'අපගේ WhatsApp Community එකට එක්වන්න', communityIntro: 'ලියාපදිංචි වූ ඔබට Community එකට එක්වී, ඔබට අදාළ කණ්ඩායම තෝරාගෙන party updates සහ වැදගත් තොරතුරු ලබාගත හැකිය.', communityJoin: 'Community එකට Join වන්න', groupSelectTitle: 'ඔබගේ කණ්ඩායම තෝරන්න', groupSelectIntro: 'ඔබේ class එකට අදාළ Join button එක click කරන්න.',
+        brotherhoodTitle: 'පාසල් සීමාවන්ගෙන් ඔබ්බට ගිය, මොණරාගල සහෝදරත්වයේ අභිමානවත් ආදර්ශය', brotherhoodIntro: 'අපේ අසල්වැසි මිතුරන්ට ආදරයෙන් කරන විශේෂ ආරාධනය.',
         rsvpButton: 'සහභාගීත්වය සටහන් කරන්න (Quick RSVP)', generalChat: 'WhatsApp සාමාන්‍ය Chat වෙත ඇතුළු වන්න', modalTitle: 'RSVP තහවුරු කිරීම',
         fullName: 'සම්පූර්ණ නම *', phone: 'දුරකථන අංකය *', batch: 'පාසල් කණ්ඩායම / Batch', status: 'සහභාගීත්වය', notes: 'යෝජනා හෝ අදහස් (විකල්ප)', send: 'Google Sheet වෙත සුරකින්න', footerRole: 'මාධ්‍ය හා සම්බන්ධීකරණ ප්‍රධානී: අමිල ඉන්ද්‍රජිත් අහංගම', footerPhone: 'දුරකථන / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
         namePlaceholder: 'ඔබගේ නම ඇතුළත් කරන්න', notesPlaceholder: 'අමතර විස්තර...', confirm: 'නියත වශයෙන්ම සහභාගී වෙමි (Confirm)', tentative: 'තවමත් ස්ථිර නැත (Tentative)', audioOff: 'OFF', audioOn: 'ON'
@@ -1443,6 +1527,8 @@
         platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
         welfare: 'Member Benefits and Welfare', welfareModalTitle: 'Member Benefits and Welfare', welfareButtonIntro: 'View the benefits available to members, teachers and our school.', welfareButtonAction: 'View member benefits', welfareModalKicker: 'Member Information', welfareModalIntro: 'Our commitment to our members, teachers and alma mater.', welfareContent: `<h4 class="font-bold text-gold-200">1. Member Benefits</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Teachers' Felicitation:</strong> The opportunity to attend the royal felicitation ceremony for the 10 retired teachers who guided us.</li><li><strong>Royal Dinner:</strong> An exceptional buffet dinner and welcome drinks.</li><li><strong>Music and Dance:</strong> A live dance floor experience with 80s/90s Sinhala retro, baila and modern DJ music, together with fire dance performances.</li><li><strong>Commemorative Memories:</strong> A special vintage photo booth experience and high-quality media coverage through photographs and video.</li><li><strong>Official Commemorative Badge:</strong> An official royal member pin or badge presented to every member.</li></ul><h4 class="font-bold text-gold-200">2. For Teachers & Alma Mater</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Teacher Felicitation:</strong> Felicitation plaques and special gifts for 10 beloved retired teachers who dedicated themselves to our school lives.</li><li><strong>Strengthening Brotherhood:</strong> Renewing our school friendships and building a strong alumni foundation for the future development of the school.</li></ul><h4 class="font-bold text-gold-200">3. Members' Welfare Fund</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Strength for tomorrow:</strong> All remaining funds after the event will be credited to establish a permanent <strong>"Members' Welfare Fund"</strong> within the alumni association.</li><li><strong>Emergency relief and support:</strong> The fund will provide assistance to our members in cases of sudden illness, emergencies or other essential needs.</li></ul>`, sponsorship: 'Sponsorship Opportunities', sponsorshipIntro: 'Support us in making this celebration a success', sponsorCallout: "Display your organization's name as an official sponsor of the royal celebration.", sponsorContact: 'Ask about sponsorship',
         communityTitle: 'Join Our WhatsApp Community', communityIntro: 'After registering, join our Community, select your relevant group, and receive party updates and important information.', communityJoin: 'Join the Community', groupSelectTitle: 'Choose Your Group', groupSelectIntro: 'Click the Join button for your class group.',
+        brotherhoodTitle: 'A Proud Example of Monaragala Brotherhood Beyond School Boundaries', brotherhoodIntro: 'A special invitation to our neighbouring friends.',
+        brotherhoodContent: `<p>Dear brothers,</p><p>When we look back at our school days, there is a special chapter of which we can be humbly proud.</p><p>While people were divided by schools and arguments arose over many things, it was <strong>our 2002–2005 batch</strong> that first created a change Monaragala had never seen before.</p><p>There is no need to explain much about the <strong>"86 Ekathuwa"</strong>...</p><ul><li>While everyone else was divided, we went together to watch the BIG matches!</li><li>When we played matches with our seniors and juniors, it was our own friends who filled the ground with their SUPPORT!</li><li>Do you remember our first GET-TOGETHER at the community hall? It was Monaragala's first historic occasion where both sides came together!</li></ul><p>What more proof do we need that we were the ones who started what nobody else had done before?</p><p>That is why we decided to invite <strong>our brothers from Monaragala Mahanama Vidyalaya</strong>, our neighbouring friends from our own district, to join this journey. We do so with strong sponsorship and the highest honour of brotherhood.</p><p>The walls we broke down and the friendly culture we built then are our greatest strength in making this event a success today. Without division or conflict, we can carefully carry this beautiful bond forward.</p><p><strong>We were the first to clear this path! We were the ones who set an example for everyone!</strong></p><p>Therefore, let us strengthen the mature brotherhood we showed then and join hands as one to make <strong>"THE ROYAL POND – Nil Manel Rathriya 2026"</strong> a grand success.</p><p class="text-center text-base font-black text-pink-200">When we unite, nothing is impossible!</p>`,
         rsvpTitle: 'Confirm Your Attendance', rsvpIntro: 'Please register your name in advance to help us arrange seating and event preparations.',
         rsvpButton: 'Record Attendance (Quick RSVP)', generalChat: 'Enter WhatsApp General Chat', modalTitle: 'RSVP Confirmation',
         fullName: 'Full Name *', phone: 'Phone Number *', batch: 'School Batch', status: 'Attendance', notes: 'Suggestions or Notes (Optional)', send: 'Save to Google Sheet', footerRole: 'Media and Coordination Lead: Amila Indrajith Ahangama', footerPhone: 'Phone / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
@@ -1459,9 +1545,11 @@
       highlights: 'main section:nth-of-type(3) h3 span:nth-child(2)', highlightsIntro: 'main section:nth-of-type(3) h3 + p',
       welfare: '#welfareButtonTitle', welfareModalTitle: '#welfareModalTitle', welfareButtonIntro: '#welfareButtonIntro', welfareButtonAction: '#welfareButtonAction', welfareModalKicker: '#welfareModalKicker', welfareModalIntro: '#welfareModalIntro', sponsorship: '#sponsorshipTitle', sponsorshipIntro: '#sponsorshipIntro', sponsorCallout: '#sponsorCallout', sponsorContact: '#sponsorContactLabel',
       communityTitle: '#communityTitle', communityIntro: '#communityIntro', communityJoin: '#communityJoinLabel', groupSelectTitle: '#groupSelectTitle', groupSelectIntro: '#groupSelectIntro',
+      brotherhoodTitle: '#brotherhoodTitle', brotherhoodIntro: '#brotherhoodIntro',
       rsvpTitle: '#rsvpSection h3', rsvpIntro: '#rsvpSection > p', rsvpButton: '#rsvpSection button span:first-child', generalChat: '#generalChatLabel',
       modalTitle: '#rsvpModal h4', fullName: '#rsvpForm label:nth-of-type(1)', phone: '#rsvpForm label:nth-of-type(2)', batch: '#rsvpForm label:nth-of-type(3)', status: '#rsvpForm label:nth-of-type(4)', notes: '#rsvpForm label:nth-of-type(5)', send: '#rsvpForm button[type="submit"]', footerRole: 'footer p:first-child', footerPhone: 'footer p:nth-child(2)', copyright: 'footer div'
     };
+    const brotherhoodSinhalaContent = document.getElementById('brotherhoodMessage').innerHTML;
 
     function applyLanguage(language) {
       const selected = translations[language] || translations.si;
@@ -1477,6 +1565,7 @@
       const detailDescSelectors = ['main section:nth-of-type(3) .space-y-3 > div:nth-child(1) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(2) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(3) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(4) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(5) p'];
       [selected.highlight1, selected.highlight2, selected.highlight3, selected.highlight4, selected.highlight5].forEach((text, index) => { const element = document.querySelector(detailSelectors[index]); if (element) element.textContent = text; });
       [selected.highlight1Desc, selected.highlight2Desc, selected.highlight3Desc, selected.highlight4Desc, selected.highlight5Desc].forEach((text, index) => { const element = document.querySelector(detailDescSelectors[index]); if (element) element.textContent = text; });
+      document.getElementById('brotherhoodMessage').innerHTML = selected.brotherhoodContent || brotherhoodSinhalaContent;
       document.getElementById('welfareDetailsContent').innerHTML = selected.welfareContent;
       document.querySelector('footer p:nth-child(2)').innerHTML = `${selected.footerPhone} <a href="https://wa.me/94710438487" target="_blank" class="text-gold-300 hover:underline font-mono">0710 438 487</a>`;
       const packageSelectors = ['#sponsorshipSection > div.grid > div:nth-child(1)', '#sponsorshipSection > div.grid > div:nth-child(2)', '#sponsorshipSection > div.grid > div:nth-child(3)', '#sponsorshipSection > div.grid > div:nth-child(4)'];
