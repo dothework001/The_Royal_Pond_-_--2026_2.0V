@@ -341,6 +341,81 @@
       box-shadow: 0 12px 28px rgba(245, 158, 11, 0.38);
     }
 
+    .whatsapp-community-section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(34, 197, 94, 0.24), transparent 38%),
+        radial-gradient(circle at 90% 100%, rgba(168, 85, 247, 0.2), transparent 40%),
+        linear-gradient(145deg, rgba(8, 39, 35, 0.96), rgba(9, 15, 38, 0.98) 58%, rgba(44, 19, 65, 0.96));
+      border: 1px solid rgba(74, 222, 128, 0.46);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42), 0 0 38px rgba(34, 197, 94, 0.12);
+    }
+
+    .whatsapp-community-section::before {
+      content: '';
+      position: absolute;
+      inset: 0.45rem;
+      border: 1px solid rgba(134, 239, 172, 0.16);
+      border-radius: 1.35rem;
+      pointer-events: none;
+    }
+
+    .whatsapp-community-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(134, 239, 172, 0.36);
+      border-radius: 9999px;
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.12);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .whatsapp-group-card {
+      display: flex;
+      min-height: 3.25rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.35rem;
+      padding: 0.55rem 0.6rem;
+      border: 1px solid rgba(134, 239, 172, 0.2);
+      border-radius: 0.8rem;
+      background: rgba(2, 20, 18, 0.46);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .whatsapp-group-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(134, 239, 172, 0.58);
+      background: rgba(34, 197, 94, 0.12);
+    }
+
+    .whatsapp-group-card a {
+      display: inline-flex;
+      min-height: 2rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4rem 0.55rem;
+      border-radius: 0.6rem;
+      background: #22c55e;
+      color: #052e16;
+      font-size: 0.58rem;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .whatsapp-group-card a:hover {
+      transform: translateY(-1px);
+      background: #86efac;
+    }
+
     #themeDetailsModal {
       overscroll-behavior: contain;
     }
@@ -1052,8 +1127,8 @@
     <section id="sponsorshipSection" class="sponsorship-feature rounded-3xl mb-10">
       <div class="relative z-10 text-center">
         <span class="sponsor-kicker">✦ Special Recognition ✦</span>
-        <h3 class="text-xl sm:text-2xl font-black text-white mt-3">අනුග්‍රාහක දායකත්ව</h3>
-        <p class="text-xs sm:text-sm text-amber-100/80 mt-1 max-w-sm mx-auto leading-relaxed">ඔබේ දායකත්වය රාජකීය රාත්‍රියක මතකයක් පමණක් නොව, අපේ ගුරුභවතුන්ට සහ පාසලට කරන ගෞරවයකි.</p>
+        <h3 id="sponsorshipTitle" class="text-xl sm:text-2xl font-black text-white mt-3">අනුග්‍රාහක දායකත්ව</h3>
+        <p id="sponsorshipIntro" class="text-xs sm:text-sm text-amber-100/80 mt-1 max-w-sm mx-auto leading-relaxed">ඔබේ දායකත්වය රාජකීය රාත්‍රියක මතකයක් පමණක් නොව, අපේ ගුරුභවතුන්ට සහ පාසලට කරන ගෞරවයකි.</p>
       </div>
 
       <div class="sponsor-benefit-strip">
@@ -1102,7 +1177,36 @@
     </section>
 
     <!-- RSVP TRIGGER BANNER -->
-    <section class="glass-card rounded-3xl p-6 text-center border-gold-400/40 shadow-2xl mb-12 relative overflow-hidden">
+    <section id="whatsappCommunitySection" class="whatsapp-community-section rounded-3xl p-5 sm:p-6 mb-10 relative">
+      <div class="relative z-10 text-center">
+        <span class="whatsapp-community-badge">💬 WhatsApp Community</span>
+        <h3 id="communityTitle" class="text-xl sm:text-2xl font-black text-white mt-3">අපගේ WhatsApp Community එකට එක්වන්න</h3>
+        <p id="communityIntro" class="text-xs sm:text-sm text-emerald-100/80 mt-2 leading-relaxed">
+          ලියාපදිංචි වූ ඔබට Community එකට එක්වී, ඔබට අදාළ කණ්ඩායම තෝරාගෙන party updates සහ වැදගත් තොරතුරු ලබාගත හැකිය.
+        </p>
+        <a id="communityJoinLink" href="https://chat.whatsapp.com/LMohnE0KsBJ7x6UbSRcUe6" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 px-5 py-3 text-sm font-extrabold text-emerald-950 shadow-lg transition hover:from-green-300 hover:to-emerald-400">
+          <span>🟢</span><span id="communityJoinLabel">Community එකට Join වන්න</span><span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="relative z-10 mt-5 border-t border-emerald-200/10 pt-4">
+        <h4 id="groupSelectTitle" class="text-center text-sm font-bold text-emerald-100">ඔබගේ කණ්ඩායම තෝරන්න</h4>
+        <p id="groupSelectIntro" class="mt-1 text-center text-[11px] text-slate-300">ඔබේ class එකට අදාළ Join button එක click කරන්න.</p>
+        <div class="mt-4 grid grid-cols-2 gap-2">
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">Class A</strong><a href="https://chat.whatsapp.com/EfObWj3Nr81Eh869qNUqu0" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">Class B</strong><a href="https://chat.whatsapp.com/JWsI7rEriNwFsjjxs2QI0Q" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">Class C</strong><a href="https://chat.whatsapp.com/BxQVNAt0EZWJkiOv2aBNmM" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">Class D</strong><a href="https://chat.whatsapp.com/HoSmBK6Y9WfHu3QQzFaqzI" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">Class E</strong><a href="https://chat.whatsapp.com/KK2W6k80VPt7nP3ksD9m2y" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">ART</strong><a href="https://chat.whatsapp.com/L1xShmaukMuHJmyIe5GrfU" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">COMMERCE</strong><a href="https://chat.whatsapp.com/IoJjtL8JCuMBExHJFE6n7Y" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+          <div class="whatsapp-group-card"><strong class="block min-w-0 truncate text-xs text-white">SCIENCE</strong><a href="https://chat.whatsapp.com/D5pllYpzhxaDzdD1ecuiua" target="_blank" rel="noopener noreferrer">Join ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP TRIGGER BANNER -->
+    <section id="rsvpSection" class="glass-card rounded-3xl p-6 text-center border-gold-400/40 shadow-2xl mb-12 relative overflow-hidden">
       <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-gold-400/10 border border-gold-400/40 flex items-center justify-center text-2xl">
         ✉️
       </div>
@@ -1323,6 +1427,7 @@
         platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
         welfare: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareModalTitle: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareButtonIntro: 'සාමාජිකයින්ට, ගුරුභවතුන්ට සහ පාසලට හිමිවන ප්‍රතිලාභ දැනගැනීමට මෙතැනින් බලන්න.', welfareButtonAction: 'සාමාජික ප්‍රතිලාභ බලන්න', welfareModalKicker: 'සාමාජික තොරතුරු', welfareModalIntro: 'අපේ සාමාජිකයින්, ගුරුභවතුන් සහ පාසල වෙනුවෙන් අපගේ කැපවීම.', welfareContent: `<h4 class="font-bold text-gold-200">1. සාමාජිකයින්ට හිමිවන දේ (Member Benefits)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>ගුරු උපහාර උළෙල:</strong> අපට මඟපෙන්වූ විශ්‍රාමික ගුරුභවතුන් 10 දෙනාට කෙරෙන රාජකීය උපහාර උළෙලට සහභාගී වීමේ අවස්ථාව.</li><li><strong>රාජකීය රාත්‍රී භෝජන සංග්‍රහය:</strong> අතිවිශේෂ Buffet Dinner සහ Welcome Drinks.</li><li><strong>සංගීතය සහ නර්තනය:</strong> 80s/90s Sinhala Retro, Baila සහ නවීන DJ සංගීතය සමඟ සජීවී Dance Floor අත්දැකීම සහ ගිනි නර්තන සංදර්ශන.</li><li><strong>සමරු මතක සටහන්:</strong> විශේෂ Vintage Photo Booth අත්දැකීම සහ උසස් තත්ත්වයේ Media Coverage (ඡායාරූප/වීඩියෝ).</li><li><strong>නිල සමරු ලාංඡනය:</strong> සෑම සාමාජිකයෙකුටම පිරිනැමෙන නිල රාජකීය සමරු ලාංඡනය (Member Pin / Badge).</li></ul><h4 class="font-bold text-gold-200">2. පාසල සහ ගුරුභවතුන් වෙනුවෙන් (For Teachers & Alma Mater)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>ගුරු උපහාර පිදීම:</strong> අපගේ පාසල් දිවිය සාර්ථක කරලීමට කැපවූ විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් සහ පියවරුන් 10 දෙනෙකුට උපහාර ඵලක සහ විශේෂ තිළිණ පිරිනැමීම.</li><li><strong>සහෝදරත්වයේ බැඳීම යළි තහවුරු කිරීම:</strong> පාසල් මිතුදම අලුත් කරගනිමින් ඉදිරියේදී පාසලේ සංවර්ධනය වෙනුවෙන් ශක්තිමත් අප පදනමක් ගොඩනැගීම.</li></ul><h4 class="font-bold text-gold-200">3. සාමාජික සුබසාධන අරමුදල (Members' Welfare Fund)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>හෙට දවස වෙනුවෙන් ශක්තියක්:</strong> මෙම උත්සවයෙන් පසු ඉතිරි වන සියලුම ශේෂ මුදල්, අපගේ ස්ථිර <strong>"සාමාජික සුබසාධන අරමුදලක්"</strong> පිහිටුවීමට බැර කෙරේ.</li><li><strong>හදිසි සහන සහ ආධාර:</strong> අපේම සාමාජිකයෙකුට මුහුණදීමට සිදුවන හදිසි අසනීපයකදී, හදිසි ආපදාවකදී හෝ වෙනත් ඕනෑම අත්‍යවශ්‍ය අවස්ථාවකදී පිහිට විය හැකි ආරක්ෂිත අරමුදලක් ලෙස මෙය ක්‍රියාත්මක වේ.</li></ul>`, sponsorship: 'අනුග්‍රාහක දායකත්ව', sponsorshipIntro: 'උත්සවය සාර්ථක කරගැනීමට අත්වැලක් වන්න', sponsorCallout: 'ඔබගේ ආයතනයේ නම රාජකීය උත්සවයේ නිල අනුග්‍රාහකයෙකු ලෙස ප්‍රදර්ශනය කරන්න.', sponsorContact: 'අනුග්‍රාහකත්වය ගැන විමසන්න',
         rsvpTitle: 'ඔබගේ සහභාගීත්වය තහවුරු කරන්න', rsvpIntro: 'ආසන වෙන්කිරීම් සහ සංවිධාන කටයුතු විධිමත් කරගැනීමට කරුණාකර ඔබගේ නම කල්තියා ලියාපදිංචි කරන්න.',
+        communityTitle: 'අපගේ WhatsApp Community එකට එක්වන්න', communityIntro: 'ලියාපදිංචි වූ ඔබට Community එකට එක්වී, ඔබට අදාළ කණ්ඩායම තෝරාගෙන party updates සහ වැදගත් තොරතුරු ලබාගත හැකිය.', communityJoin: 'Community එකට Join වන්න', groupSelectTitle: 'ඔබගේ කණ්ඩායම තෝරන්න', groupSelectIntro: 'ඔබේ class එකට අදාළ Join button එක click කරන්න.',
         rsvpButton: 'සහභාගීත්වය සටහන් කරන්න (Quick RSVP)', generalChat: 'WhatsApp සාමාන්‍ය Chat වෙත ඇතුළු වන්න', modalTitle: 'RSVP තහවුරු කිරීම',
         fullName: 'සම්පූර්ණ නම *', phone: 'දුරකථන අංකය *', batch: 'පාසල් කණ්ඩායම / Batch', status: 'සහභාගීත්වය', notes: 'යෝජනා හෝ අදහස් (විකල්ප)', send: 'Google Sheet වෙත සුරකින්න', footerRole: 'මාධ්‍ය හා සම්බන්ධීකරණ ප්‍රධානී: අමිල ඉන්ද්‍රජිත් අහංගම', footerPhone: 'දුරකථන / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
         namePlaceholder: 'ඔබගේ නම ඇතුළත් කරන්න', notesPlaceholder: 'අමතර විස්තර...', confirm: 'නියත වශයෙන්ම සහභාගී වෙමි (Confirm)', tentative: 'තවමත් ස්ථිර නැත (Tentative)', audioOff: 'OFF', audioOn: 'ON'
@@ -1337,6 +1442,7 @@
         highlight1: 'Traditional Royal Welcome', highlight1Desc: 'A grand welcome with ceremonial drums and Kandyan dance.', highlight2: 'Teachers’ Tribute Ceremony', highlight2Desc: 'A special tribute to ten beloved retired teachers.', highlight3: 'Live DJ & Retro Dance Floor', highlight3Desc: '80s/90s Sinhala retro pop, classics, baila, and club beats.', highlight4: 'Royal Dinner Banquet', highlight4Desc: 'An exclusive buffet dinner, welcome drinks, and refreshments.', highlight5: 'Vintage Photo Studio & Booth', highlight5Desc: 'A red-carpet photo backdrop to capture memories with friends.',
         platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
         welfare: 'Member Benefits and Welfare', welfareModalTitle: 'Member Benefits and Welfare', welfareButtonIntro: 'View the benefits available to members, teachers and our school.', welfareButtonAction: 'View member benefits', welfareModalKicker: 'Member Information', welfareModalIntro: 'Our commitment to our members, teachers and alma mater.', welfareContent: `<h4 class="font-bold text-gold-200">1. Member Benefits</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Teachers' Felicitation:</strong> The opportunity to attend the royal felicitation ceremony for the 10 retired teachers who guided us.</li><li><strong>Royal Dinner:</strong> An exceptional buffet dinner and welcome drinks.</li><li><strong>Music and Dance:</strong> A live dance floor experience with 80s/90s Sinhala retro, baila and modern DJ music, together with fire dance performances.</li><li><strong>Commemorative Memories:</strong> A special vintage photo booth experience and high-quality media coverage through photographs and video.</li><li><strong>Official Commemorative Badge:</strong> An official royal member pin or badge presented to every member.</li></ul><h4 class="font-bold text-gold-200">2. For Teachers & Alma Mater</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Teacher Felicitation:</strong> Felicitation plaques and special gifts for 10 beloved retired teachers who dedicated themselves to our school lives.</li><li><strong>Strengthening Brotherhood:</strong> Renewing our school friendships and building a strong alumni foundation for the future development of the school.</li></ul><h4 class="font-bold text-gold-200">3. Members' Welfare Fund</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Strength for tomorrow:</strong> All remaining funds after the event will be credited to establish a permanent <strong>"Members' Welfare Fund"</strong> within the alumni association.</li><li><strong>Emergency relief and support:</strong> The fund will provide assistance to our members in cases of sudden illness, emergencies or other essential needs.</li></ul>`, sponsorship: 'Sponsorship Opportunities', sponsorshipIntro: 'Support us in making this celebration a success', sponsorCallout: "Display your organization's name as an official sponsor of the royal celebration.", sponsorContact: 'Ask about sponsorship',
+        communityTitle: 'Join Our WhatsApp Community', communityIntro: 'After registering, join our Community, select your relevant group, and receive party updates and important information.', communityJoin: 'Join the Community', groupSelectTitle: 'Choose Your Group', groupSelectIntro: 'Click the Join button for your class group.',
         rsvpTitle: 'Confirm Your Attendance', rsvpIntro: 'Please register your name in advance to help us arrange seating and event preparations.',
         rsvpButton: 'Record Attendance (Quick RSVP)', generalChat: 'Enter WhatsApp General Chat', modalTitle: 'RSVP Confirmation',
         fullName: 'Full Name *', phone: 'Phone Number *', batch: 'School Batch', status: 'Attendance', notes: 'Suggestions or Notes (Optional)', send: 'Save to Google Sheet', footerRole: 'Media and Coordination Lead: Amila Indrajith Ahangama', footerPhone: 'Phone / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
@@ -1351,8 +1457,9 @@
       place: '[aria-label="Countdown Timer"] .text-gold-200', time: '[aria-label="Countdown Timer"] .text-slate-300 > span:last-child',
       date: '.grid.grid-cols-3 > div:nth-child(1) span:nth-of-type(2)', city: '.grid.grid-cols-3 > div:nth-child(2) span:nth-of-type(2)', theme: '.grid.grid-cols-3 > div:nth-child(3) span:nth-of-type(2)',
       highlights: 'main section:nth-of-type(3) h3 span:nth-child(2)', highlightsIntro: 'main section:nth-of-type(3) h3 + p',
-      welfare: '#welfareButtonTitle', welfareModalTitle: '#welfareModalTitle', welfareButtonIntro: '#welfareButtonIntro', welfareButtonAction: '#welfareButtonAction', welfareModalKicker: '#welfareModalKicker', welfareModalIntro: '#welfareModalIntro', sponsorship: 'main section:nth-of-type(5) h3', sponsorshipIntro: 'main section:nth-of-type(5) h3 + p', sponsorCallout: '#sponsorCallout', sponsorContact: '#sponsorContactLabel',
-      rsvpTitle: 'main section:nth-of-type(6) h3', rsvpIntro: 'main section:nth-of-type(6) h3 + p', rsvpButton: 'main section:nth-of-type(6) button span:first-child', generalChat: '#generalChatLabel',
+      welfare: '#welfareButtonTitle', welfareModalTitle: '#welfareModalTitle', welfareButtonIntro: '#welfareButtonIntro', welfareButtonAction: '#welfareButtonAction', welfareModalKicker: '#welfareModalKicker', welfareModalIntro: '#welfareModalIntro', sponsorship: '#sponsorshipTitle', sponsorshipIntro: '#sponsorshipIntro', sponsorCallout: '#sponsorCallout', sponsorContact: '#sponsorContactLabel',
+      communityTitle: '#communityTitle', communityIntro: '#communityIntro', communityJoin: '#communityJoinLabel', groupSelectTitle: '#groupSelectTitle', groupSelectIntro: '#groupSelectIntro',
+      rsvpTitle: '#rsvpSection h3', rsvpIntro: '#rsvpSection > p', rsvpButton: '#rsvpSection button span:first-child', generalChat: '#generalChatLabel',
       modalTitle: '#rsvpModal h4', fullName: '#rsvpForm label:nth-of-type(1)', phone: '#rsvpForm label:nth-of-type(2)', batch: '#rsvpForm label:nth-of-type(3)', status: '#rsvpForm label:nth-of-type(4)', notes: '#rsvpForm label:nth-of-type(5)', send: '#rsvpForm button[type="submit"]', footerRole: 'footer p:first-child', footerPhone: 'footer p:nth-child(2)', copyright: 'footer div'
     };
 
@@ -1372,7 +1479,7 @@
       [selected.highlight1Desc, selected.highlight2Desc, selected.highlight3Desc, selected.highlight4Desc, selected.highlight5Desc].forEach((text, index) => { const element = document.querySelector(detailDescSelectors[index]); if (element) element.textContent = text; });
       document.getElementById('welfareDetailsContent').innerHTML = selected.welfareContent;
       document.querySelector('footer p:nth-child(2)').innerHTML = `${selected.footerPhone} <a href="https://wa.me/94710438487" target="_blank" class="text-gold-300 hover:underline font-mono">0710 438 487</a>`;
-      const packageSelectors = ['main section:nth-of-type(5) > div.grid > div:nth-child(1)', 'main section:nth-of-type(5) > div.grid > div:nth-child(2)', 'main section:nth-of-type(5) > div.grid > div:nth-child(3)', 'main section:nth-of-type(5) > div.grid > div:nth-child(4)'];
+      const packageSelectors = ['#sponsorshipSection > div.grid > div:nth-child(1)', '#sponsorshipSection > div.grid > div:nth-child(2)', '#sponsorshipSection > div.grid > div:nth-child(3)', '#sponsorshipSection > div.grid > div:nth-child(4)'];
       [[selected.platinum, selected.platinumDesc], [selected.gold, selected.goldDesc], [selected.silver, selected.silverDesc], [selected.donor, selected.donorDesc]].forEach(([title, description], index) => { const card = document.querySelector(packageSelectors[index]); if (card) { card.querySelector('span:first-child').textContent = title; card.querySelector('p').textContent = description; } });
       document.getElementById('audioToggleButton').setAttribute('aria-label', isPlaying ? 'Mute Background Music' : 'Unmute Background Music');
       document.getElementById('audioToggleButton').setAttribute('title', isPlaying ? 'Mute Background Music' : 'Unmute Background Music');
