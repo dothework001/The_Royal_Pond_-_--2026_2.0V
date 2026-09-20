@@ -416,6 +416,22 @@
       background: #86efac;
     }
 
+    .theme-details-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.45rem;
+      color: #fde68a;
+      font-size: 0.58rem;
+      font-weight: 700;
+      animation: theme-hint-pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes theme-hint-pulse {
+      0%, 100% { opacity: 0.58; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-2px); }
+    }
+
     .brotherhood-feature {
       position: relative;
       isolation: isolate;
@@ -1092,6 +1108,7 @@
         <span class="text-xl block mb-1">👔</span>
         <span class="text-[10px] uppercase font-bold tracking-wider text-gold-300/80 block">තේමාව</span>
         <span class="text-xs font-semibold text-white">Touch of Royal</span>
+        <span id="themeDetailsHint" class="theme-details-hint">✨ විස්තර බලන්න</span>
       </button>
     </section>
 
@@ -1338,11 +1355,11 @@
     <div class="theme-details-panel glass-card bg-royal-950/98 border border-gold-400/50 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative">
       <button type="button" onclick="closeThemeDetails()" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center text-base" aria-label="Close theme details">✕</button>
       <div class="pr-10">
-        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-bold">Theme Details</span>
+        <span id="themeDetailsKicker" class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-bold">Theme Details</span>
         <h2 id="themeDetailsTitle" class="text-xl sm:text-2xl font-black text-white mt-1">👔 Touch of Royal</h2>
-        <p class="text-xs sm:text-sm text-amber-100/80 mt-2 leading-relaxed">රාජකීය අභිමානය සහිත අමතක නොවන අත්දැකීමක්</p>
+        <p id="themeDetailsIntro" class="text-xs sm:text-sm text-amber-100/80 mt-2 leading-relaxed">රාජකීය අභිමානය සහිත අමතක නොවන අත්දැකීමක්</p>
       </div>
-      <div class="theme-details-content mt-3">
+      <div id="themeDetailsContent" class="theme-details-content mt-3">
         <p><strong>"Touch of Royal"</strong> (රාජකීය අභිමානය) යන තේමාව මෙම උත්සවය සඳහා යොදාගෙන ඇත්තේ සාමාන්‍ය සාදයකින් ඔබ්බට ගිය, ගාම්භීර සහ උත්කර්ෂවත් අත්දැකීමක් සියලු දෙනාටම ලබාදීමේ අරමුණෙනි.</p>
 
         <h4>1. වර්ණ සංකලනය සහ පරිසරය (Color Theme &amp; Ambience)</h4>
@@ -1504,7 +1521,7 @@
         countdown: 'උත්සවයට ඉතිරි කාලය',
         day: 'දින', hour: 'පැය', minute: 'මිනිත්තු', second: 'තත්පර',
         place: 'මොණරාගලදී', time: 'ප.ව. 4:30 සිට ඉදිරියට',
-        date: 'දිනය', city: 'නගරය', theme: 'තේමාව',
+        date: 'දිනය', city: 'නගරය', theme: 'තේමාව', themeDetailsKicker: 'තේමා විස්තර', themeDetailsTitle: '👔 Touch of Royal', themeDetailsIntro: 'රාජකීය අභිමානය සහිත අමතක නොවන අත්දැකීමක්', themeDetailsHint: '✨ විස්තර බලන්න',
         highlights: 'රාත්‍රියේ විශේෂාංග', highlightsIntro: 'රාජකීය අත්දැකීම් සමඟින් වර්ණවත් වන හෝරා කිහිපය',
         highlight1: 'සාම්ප්‍රදායික රාජකීය පිළිගැනීම', highlight1Desc: 'මඟුල් බෙර වාදන හා වෙස් නැටුම් සමඟින් උත්කර්ෂවත් පිළිගැනීම.', highlight2: 'ගුරු උපහාර උත්තමාචාරය', highlight2Desc: 'විශ්‍රාමික ආදරණීය ගුරු මෑණිවරුන් හා පියවරුන් 10 දෙනෙකුට උපහාර පිදීම.', highlight3: 'Live DJ & Retro Dance Floor', highlight3Desc: '80s/90s Sinhala Retro Pop, Classics, Baila සහ Club beats සංගීතය.', highlight4: 'රාජකීය රාත්‍රී භෝජන සංග්‍රහය', highlight4Desc: 'අතිවිශේෂ Buffet Dinner, Welcome Drinks සහ සංග්‍රහයන්.', highlight5: 'Vintage Photo Studio & Booth', highlight5Desc: 'පාසල් මිතුරන් සමඟ මතක සටහන් ගැනීමට Red Carpet Photo Backdrop.',
         platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
@@ -1521,7 +1538,7 @@
         enter: 'Enter',
         eventIntro: 'A grand evening to renew our lifelong brotherhood and honour the beloved retired teachers who guided us.',
         countdown: 'Time Until the Celebration', day: 'Days', hour: 'Hours', minute: 'Minutes', second: 'Seconds',
-        place: 'In Monaragala', time: 'From 4:30 PM onwards', date: 'Date', city: 'City', theme: 'Theme',
+        place: 'In Monaragala', time: 'From 4:30 PM onwards',         date: 'Date', city: 'City', theme: 'Theme', themeDetailsKicker: 'Theme Details', themeDetailsTitle: '👔 Touch of Royal', themeDetailsIntro: 'A memorable experience filled with royal pride, dignity and elegance.', themeDetailsHint: '✨ Tap to view details',
         highlights: 'Evening Highlights', highlightsIntro: 'A few memorable hours filled with royal experiences',
         highlight1: 'Traditional Royal Welcome', highlight1Desc: 'A grand welcome with ceremonial drums and Kandyan dance.', highlight2: 'Teachers’ Tribute Ceremony', highlight2Desc: 'A special tribute to ten beloved retired teachers.', highlight3: 'Live DJ & Retro Dance Floor', highlight3Desc: '80s/90s Sinhala retro pop, classics, baila, and club beats.', highlight4: 'Royal Dinner Banquet', highlight4Desc: 'An exclusive buffet dinner, welcome drinks, and refreshments.', highlight5: 'Vintage Photo Studio & Booth', highlight5Desc: 'A red-carpet photo backdrop to capture memories with friends.',
         platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
@@ -1536,12 +1553,43 @@
       }
     };
 
+    const themeDetailsSinhalaContent = document.getElementById('themeDetailsContent').innerHTML;
+    const themeDetailsEnglishContent = `<p><strong>"Touch of Royal"</strong> represents a grand and memorable experience that goes beyond an ordinary celebration, filled with dignity, elegance and royal pride.</p>
+      <h4>1. Colour Theme &amp; Ambience</h4>
+      <ul>
+        <li><strong>Colour palette:</strong> Deep Royal Blue and warm Gold/Amber will create the main visual identity.</li>
+        <li><strong>Lighting:</strong> Royal blue and gold LED up-lighting will create a rich and elegant atmosphere.</li>
+        <li><strong>Stage lighting:</strong> Warm White lighting (3200K–4000K) will keep teachers and speakers clearly visible and make photographs look refined.</li>
+      </ul>
+      <h4>2. Traditional Royal Welcome</h4>
+      <ul>
+        <li><strong>Traditional drums and Kandyan dance:</strong> Teachers and members will receive a royal welcome led by traditional drummers and Kandyan dancers.</li>
+        <li><strong>Decorations and backdrop:</strong> A vintage photo booth and a main "Touch of Royal" welcome backdrop will be created.</li>
+      </ul>
+      <h4>3. Honour &amp; Respect for Teachers</h4>
+      <ul>
+        <li><strong>Teachers' felicitation:</strong> Ten retired teachers will receive special tribute plaques and gifts.</li>
+        <li><strong>Commemorative member badges:</strong> Every member will receive an official lapel pin or badge celebrating our royal unity.</li>
+      </ul>
+      <h4>4. Hospitality &amp; Dining</h4>
+      <ul>
+        <li><strong>Round-table layout:</strong> The hall will be arranged so members can sit comfortably and reconnect with one another.</li>
+        <li><strong>Royal banquet:</strong> Welcome drinks and an exceptional buffet dinner will be served.</li>
+      </ul>
+      <h4>5. Entertainment &amp; After-Party</h4>
+      <ul>
+        <li><strong>Moving heads and haze effects:</strong> Haze/fog and colourful beam lights will make the party atmosphere stand out.</li>
+        <li><strong>Fire dance and DJ:</strong> Live DJ music, from 80s/90s favourites to modern beats, together with fire dance performances, will make the night unforgettable.</li>
+      </ul>
+      <p class="mt-5 border-t border-white/10 pt-4 text-amber-100/90"><strong>In short, "Touch of Royal" is</strong> a royal experience that celebrates our school friendship and honours our teachers with the highest respect and pride.</p>`;
+
     const languageTextTargets = {
       portalTag: '#portalCenterStage > p', enter: '#btnEnterPortal span:last-child',
       eventIntro: 'main > header > p', countdown: '[aria-label="Countdown Timer"] .text-gold-300',
       day: '#days + span', hour: '#hours + span', minute: '#minutes + span', second: '#seconds + span',
       place: '[aria-label="Countdown Timer"] .text-gold-200', time: '[aria-label="Countdown Timer"] .text-slate-300 > span:last-child',
       date: '.grid.grid-cols-3 > div:nth-child(1) span:nth-of-type(2)', city: '.grid.grid-cols-3 > div:nth-child(2) span:nth-of-type(2)', theme: '.grid.grid-cols-3 > div:nth-child(3) span:nth-of-type(2)',
+      themeDetailsKicker: '#themeDetailsKicker', themeDetailsTitle: '#themeDetailsTitle', themeDetailsIntro: '#themeDetailsIntro', themeDetailsHint: '#themeDetailsHint',
       highlights: 'main section:nth-of-type(3) h3 span:nth-child(2)', highlightsIntro: 'main section:nth-of-type(3) h3 + p',
       welfare: '#welfareButtonTitle', welfareModalTitle: '#welfareModalTitle', welfareButtonIntro: '#welfareButtonIntro', welfareButtonAction: '#welfareButtonAction', welfareModalKicker: '#welfareModalKicker', welfareModalIntro: '#welfareModalIntro', sponsorship: '#sponsorshipTitle', sponsorshipIntro: '#sponsorshipIntro', sponsorCallout: '#sponsorCallout', sponsorContact: '#sponsorContactLabel',
       communityTitle: '#communityTitle', communityIntro: '#communityIntro', communityJoin: '#communityJoinLabel', groupSelectTitle: '#groupSelectTitle', groupSelectIntro: '#groupSelectIntro',
@@ -1557,6 +1605,7 @@
         const element = document.querySelector(selector);
         if (element && selected[key]) element.textContent = selected[key];
       });
+      document.getElementById('themeDetailsContent').innerHTML = language === 'en' ? themeDetailsEnglishContent : themeDetailsSinhalaContent;
       document.getElementById('fName').placeholder = selected.namePlaceholder;
       document.getElementById('fNote').placeholder = selected.notesPlaceholder;
       document.querySelector('#rsvpAttending option[value="Definitely attending (Confirm)"]').textContent = selected.confirm;
