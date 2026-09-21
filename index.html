@@ -225,10 +225,6 @@
       margin-top: 0.8rem;
     }
 
-    #rsvpSection {
-      padding: 1.35rem 1.15rem 1.2rem;
-    }
-
     .sponsor-tier-card {
       position: relative;
       overflow: hidden;
@@ -766,8 +762,7 @@
       }
 
       #btnEnterPortal,
-      main section button,
-      #rsvpForm button {
+      main section button {
         min-height: 48px;
       }
 
@@ -888,19 +883,6 @@
         flex-wrap: wrap;
       }
 
-      #rsvpModal {
-        align-items: flex-start;
-        overflow-y: auto;
-        padding: 0.75rem;
-      }
-
-      #rsvpModal > div {
-        max-height: calc(100svh - 1.5rem);
-        overflow-y: auto;
-        margin-block: 0;
-        padding: 1.25rem;
-      }
-
       #audioControlPill {
         top: 0.75rem;
         right: 0.75rem;
@@ -976,10 +958,6 @@
         width: 2.75rem;
         height: 2.75rem;
         font-size: 1.35rem;
-      }
-
-      #rsvpModal > div {
-        padding: 1rem;
       }
 
       #themeDetailsModal {
@@ -1307,7 +1285,7 @@
       </div>
     </section>
 
-    <!-- RSVP TRIGGER BANNER -->
+    <!-- COMMUNITY JOIN SECTION -->
     <section id="whatsappCommunitySection" class="whatsapp-community-section rounded-3xl p-5 sm:p-6 mb-10 relative">
       <div class="relative z-10 text-center">
         <h3 id="communityTitle" class="text-xl sm:text-2xl font-black text-white mt-3">අපගේ WhatsApp Community එකට එක්වන්න</h3>
@@ -1411,107 +1389,6 @@
     </div>
   </div>
 
-  <!-- RSVP FORM MODAL -->
-  <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all">
-    <div class="glass-card bg-royal-950/95 border border-gold-400/40 w-full max-w-md rounded-3xl p-6 shadow-2xl relative text-left">
-      
-      <button 
-        onclick="closeRsvpModal()" 
-        class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center text-sm"
-        aria-label="Close Modal"
-      >
-        ✕
-      </button>
-
-      <div class="flex items-center gap-2 mb-1">
-        <span class="text-lg">👑</span>
-        <h4 class="text-base font-bold text-white">RSVP තහවුරු කිරීම</h4>
-      </div>
-      <p class="text-xs text-gold-300/80 mb-5">THE ROYAL POND - නිල් මානෙල් රාත්‍රිය 2026</p>
-
-      <form id="rsvpForm" onsubmit="submitRsvp(event)" class="space-y-3.5">
-        <div>
-          <label id="fullNameLabel" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
-            සම්පූර්ණ නම *
-          </label>
-          <input 
-            type="text" 
-            id="fName" 
-            required 
-            placeholder="ඔබගේ නම ඇතුළත් කරන්න" 
-            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
-          >
-        </div>
-
-        <div>
-          <label id="phoneLabel" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
-            දුරකථන අංකය *
-          </label>
-          <input 
-            type="tel" 
-            id="fPhone" 
-            required 
-            placeholder="07X XXX XXXX" 
-            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
-          >
-        </div>
-
-        <div>
-          <label id="batchLabel" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
-            පාසල් කණ්ඩායම / Batch *
-          </label>
-          <select
-            id="rsvpBatch"
-            required
-            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
-          >
-            <option value="Class A">Class A</option>
-            <option value="Class B">Class B</option>
-            <option value="Class C">Class C</option>
-            <option value="Class D">Class D</option>
-            <option value="Class E">Class E</option>
-            <option value="ART">ART</option>
-            <option value="COMMERCE">COMMERCE</option>
-            <option value="SCIENCE">SCIENCE</option>
-          </select>
-        </div>
-
-        <div>
-          <label id="statusLabel" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
-            සහභාගීත්වය *
-          </label>
-          <select
-            id="rsvpAttending"
-            required
-            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white outline-none transition"
-          >
-            <option value="Definitely attending (Confirm)">Definitely attending (Confirm)</option>
-            <option value="Not sure yet (Tentative)">Not sure yet (Tentative)</option>
-          </select>
-        </div>
-
-        <div>
-          <label id="notesLabel" class="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
-            යෝජනා හෝ අදහස් (විකල්ප)
-          </label>
-          <textarea 
-            id="fNote" 
-            rows="2" 
-            placeholder="අමතර විස්තර..." 
-            class="w-full bg-slate-900 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2 text-xs text-white outline-none transition"
-          ></textarea>
-        </div>
-
-        <button 
-          type="submit" 
-          class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg transition active:scale-98"
-        >
-          සුරකින්න
-        </button>
-      </form>
-    </div>
-  </div>
-
   <script>
     const translations = {
       si: {
@@ -1526,12 +1403,10 @@
         highlight1: 'සාම්ප්‍රදායික රාජකීය පිළිගැනීම', highlight1Desc: 'මඟුල් බෙර වාදන හා වෙස් නැටුම් සමඟින් උත්කර්ෂවත් පිළිගැනීම.', highlight2: 'පාසල් පුස්තකාලයට පොත්පත් පරිත්‍යාගය', highlight2Desc: 'වර්තමාන විදුහල්පතිතුමා සහ නියෝජ්‍ය විදුහල්පතිවරුන් ඉදිරියේ පාසලට අවශ්‍ය පොත්පත් සහ IT Lab උපකරණ පරිත්‍යාග කිරීම.', highlight3: 'Live DJ & Retro Dance Floor', highlight3Desc: '80s/90s Sinhala Retro Pop, Classics, Baila සහ Club beats සංගීතය.', highlight4: 'රාජකීය රාත්‍රී භෝජන සංග්‍රහය', highlight4Desc: 'අතිවිශේෂ Buffet Dinner, Welcome Drinks සහ සංග්‍රහයන්.', highlight5: 'Vintage Photo Studio & Booth', highlight5Desc: 'පාසල් මිතුරන් සමඟ මතක සටහන් ගැනීමට Red Carpet Photo Backdrop.',
         platinum: 'Platinum', platinumDesc: 'Backdrop logo, 2 Free Tickets, Announcements', gold: 'Gold', goldDesc: 'Photo Booth Logo, 1 Free Ticket, Announcements', silver: 'Silver', silverDesc: 'Screen Logo, WhatsApp promo, Vote of thanks', donor: 'Donor / Co-Sponsor', donorDesc: 'Batch benefactor acknowledgment & listing',
         welfare: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareModalTitle: 'සාමාජික ප්‍රතිලාභ සහ සුබසාධනය', welfareButtonIntro: 'සාමාජිකයන්ට හා පාසලට හිමිවන ප්‍රතිලාභ මෙතැනින් බලන්න.', welfareButtonAction: 'ප්‍රතිලාභ බලන්න', welfareModalKicker: 'සාමාජික තොරතුරු', welfareModalIntro: 'අපේ සාමාජිකයින්, ගුරුභවතුන් සහ පාසල වෙනුවෙන් අපගේ කැපවීම.', welfareContent: `<h4 class="font-bold text-gold-200">1. සාමාජිකයින්ට හිමිවන දේ (Member Benefits)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>රාජකීය රාත්‍රී භෝජන සංග්‍රහය:</strong> අතිවිශේෂ Buffet Dinner සහ Welcome Drinks.</li><li><strong>සංගීතය සහ නර්තනය:</strong> 80s/90s Sinhala Retro, Baila සහ නවීන DJ සංගීතය සමඟ සජීවී Dance Floor අත්දැකීම සහ ගිනි නර්තන සංදර්ශන.</li><li><strong>සමරු මතක සටහන්:</strong> විශේෂ Vintage Photo Booth අත්දැකීම සහ උසස් තත්ත්වයේ Media Coverage (ඡායාරූප/වීඩියෝ).</li><li><strong>නිල සමරු ලාංඡනය:</strong> සෑම සාමාජිකයෙකුටම පිරිනැමෙන නිල රාජකීය සමරු ලාංඡනය (Member Pin / Badge).</li></ul><h4 class="font-bold text-gold-200">2. රාජකීය පාසල් මාතාව වෙනුවෙන් — WE ARE ROYALISTS 02/05</h4><ul class="list-disc pl-5 space-y-1"><li><strong>පාසල් පුස්තකාලයට සහය:</strong> ගුරු උපහාර වැඩසටහන වෙනුවට පාසලේ පුස්තකාලයට රු. 50,000ක දායකත්වයක් ලබාදීම.</li><li><strong>IT Lab එකට උපකරණ:</strong> පාසලේ IT Lab එක සඳහා රු. 50,000ක වටිනා උපකරණ ලබාදීමේ වැඩසටහනක් ක්‍රියාත්මක කිරීම.</li><li><strong>පාසල සමඟ නිල පරිත්‍යාගය:</strong> උත්සවය අතරතුර වර්තමාන විදුහල්පතිතුමා සහ නියෝජ්‍ය විදුහල්පතිවරුන් ආරාධනා කර, මෙම දායකත්ව සහ උපකරණ පාසල වෙනුවෙන් නිල වශයෙන් පිරිනැමීම.</li></ul><h4 class="font-bold text-gold-200">3. සාමාජික සුබසාධන අරමුදල (Members' Welfare Fund)</h4><ul class="list-disc pl-5 space-y-1"><li><strong>හෙට දවස වෙනුවෙන් ශක්තියක්:</strong> මෙම උත්සවයෙන් පසු ඉතිරි වන සියලුම ශේෂ මුදල්, අපගේ ස්ථිර <strong>"සාමාජික සුබසාධන අරමුදලක්"</strong> පිහිටුවීමට බැර කෙරේ.</li><li><strong>හදිසි සහන සහ ආධාර:</strong> අපේම සාමාජිකයෙකුට මුහුණදීමට සිදුවන හදිසි අසනීපයකදී, හදිසි ආපදාවකදී හෝ වෙනත් ඕනෑම අත්‍යවශ්‍ය අවස්ථාවකදී පිහිට විය හැකි ආරක්ෂිත අරමුදලක් ලෙස මෙය ක්‍රියාත්මක වේ.</li></ul>`, sponsorship: 'අනුග්‍රාහක දායකත්ව', sponsorshipIntro: 'උත්සවය සාර්ථක කරගැනීමට අත්වැලක් වන්න', sponsorCallout: 'ඔබගේ ආයතනයේ නම රාජකීය උත්සවයේ නිල අනුග්‍රාහකයෙකු ලෙස ප්‍රදර්ශනය කරන්න.', sponsorContact: 'අනුග්‍රාහකත්වය ගැන විමසන්න',
-        rsvpTitle: 'ඔබගේ සහභාගීත්වය තහවුරු කරන්න', rsvpIntro: 'WhatsApp group වෙත ඇතුළු වීම සඳහා register වීම අනිවාර්ය බව කරුණාවෙන් සලකන්න. ආසන වෙන්කිරීම් සහ සංවිධාන කටයුතු සඳහා කරුණාකර ඔබගේ නම කල්තියා ලියාපදිංචි කරන්න.',
         communityTitle: 'අපගේ WhatsApp Community එකට එක්වන්න', communityIntro: 'ලියාපදිංචි වූ ඔබට Community එකට එක්වී, ඔබට අදාළ කණ්ඩායම තෝරාගෙන party updates සහ වැදගත් තොරතුරු ලබාගත හැකිය.', communityJoin: 'Community එකට Join වන්න', groupSelectTitle: 'ඔබගේ කණ්ඩායම තෝරන්න', groupSelectIntro: 'ඔබේ class එකට අදාළ Join button එක click කරන්න.',
         roadshowTitle: 'Road Show එකට එක්වන්න', roadshowIntro: 'THE ROYAL POND – නිල් මානෙල් රාත්‍රිය 2026 ප්‍රචාරණ Road Show එක සමඟ එකතු වී අපේ උත්සව පණිවිඩය මොණරාගල පුරා ගෙන යමු.', roadshowJoin: 'Road Show Group එකට Join වන්න',
-        rsvpButton: 'ලියාපදිංචි වන්න.', generalChat: 'WhatsApp සාමාන්‍ය Chat වෙත ඇතුළු වන්න', modalTitle: 'RSVP තහවුරු කිරීම',
-        fullName: 'සම්පූර්ණ නම *', phone: 'දුරකථන අංකය *', batch: 'පාසල් කණ්ඩායම / Batch', status: 'සහභාගීත්වය', notes: 'යෝජනා හෝ අදහස් (විකල්ප)', send: 'සුරකින්න', footerRole: 'මාධ්‍ය හා සම්බන්ධීකරණ ප්‍රධානී: අමිල ඉන්ද්‍රජිත් අහංගම', footerPhone: 'දුරකථන / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
-        namePlaceholder: 'ඔබගේ නම ඇතුළත් කරන්න', notesPlaceholder: 'අමතර විස්තර...', confirm: 'නියත වශයෙන්ම සහභාගී වෙමි (Confirm)', tentative: 'තවමත් ස්ථිර නැත (Tentative)', audioOff: 'OFF', audioOn: 'ON'
+        footerRole: 'මාධ්‍ය හා සම්බන්ධීකරණ ප්‍රධානී: අමිල ඉන්ද්‍රජිත් අහංගම', footerPhone: 'දුරකථන / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
+        audioOff: 'OFF', audioOn: 'ON'
       },
       en: {
         portalTag: 'A Royal Evening of Gratitude and Brotherhood',
@@ -1545,10 +1420,8 @@
         welfare: 'Member Benefits and Welfare', welfareModalTitle: 'Member Benefits and Welfare', welfareButtonIntro: 'View the benefits available to members, teachers and our school.', welfareButtonAction: 'View member benefits', welfareModalKicker: 'Member Information', welfareModalIntro: 'Our commitment to our members, teachers and alma mater.', welfareContent: `<h4 class="font-bold text-gold-200">1. Member Benefits</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Royal Dinner:</strong> An exceptional buffet dinner and welcome drinks.</li><li><strong>Music and Dance:</strong> A live dance floor experience with 80s/90s Sinhala retro, baila and modern DJ music, together with fire dance performances.</li><li><strong>Commemorative Memories:</strong> A special vintage photo booth experience and high-quality media coverage through photographs and video.</li><li><strong>Official Commemorative Badge:</strong> An official royal member pin or badge presented to every member.</li></ul><h4 class="font-bold text-gold-200">2. In Honour of the Royal College Monaragala Community — WE ARE ROYALISTS 02/05</h4><ul class="list-disc pl-5 space-y-1"><li><strong>School library support:</strong> A contribution of Rs. 50,000 to provide books and support the school library instead of the teachers' felicitation programme.</li><li><strong>IT Lab equipment:</strong> A programme to provide Rs. 50,000 worth of equipment for the school's IT Lab.</li><li><strong>Official school presentation:</strong> During the celebration, the current Principal and Deputy Principals will be invited so these contributions and equipment can be formally presented to the school.</li></ul><h4 class="font-bold text-gold-200">3. Members' Welfare Fund</h4><ul class="list-disc pl-5 space-y-1"><li><strong>Strength for tomorrow:</strong> All remaining funds after the event will be credited to establish a permanent <strong>"Members' Welfare Fund"</strong> within the alumni association.</li><li><strong>Emergency relief and support:</strong> The fund will provide assistance to our members in cases of sudden illness, emergencies or other essential needs.</li></ul>`, sponsorship: 'Sponsorship Opportunities', sponsorshipIntro: 'Support us in making this celebration a success', sponsorCallout: "Display your organization's name as an official sponsor of the royal celebration.", sponsorContact: 'Ask about sponsorship',
         communityTitle: 'Join Our WhatsApp Community', communityIntro: 'After registering, join our Community, select your relevant group, and receive party updates and important information.', communityJoin: 'Join the Community', groupSelectTitle: 'Choose Your Group', groupSelectIntro: 'Click the Join button for your class group.',
         roadshowTitle: 'Join the Road Show', roadshowIntro: 'Join the promotional Road Show for THE ROYAL POND – Nil Manel Rathriya 2026 and help us carry the celebration message across Monaragala.', roadshowJoin: 'Join the Road Show Group',
-        rsvpTitle: 'Confirm Your Attendance', rsvpIntro: 'Please note that registration is required to join the WhatsApp groups. Please register your name in advance so we can arrange seating and event preparations.',
-        rsvpButton: 'Record Attendance (Quick RSVP)', generalChat: 'Enter WhatsApp General Chat', modalTitle: 'RSVP Confirmation',
-        fullName: 'Full Name *', phone: 'Phone Number *', batch: 'School Batch', status: 'Attendance', notes: 'Suggestions or Notes (Optional)', send: 'SAVE', footerRole: 'Media and Coordination Lead: Amila Indrajith Ahangama', footerPhone: 'Phone / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
-        namePlaceholder: 'Enter your name', notesPlaceholder: 'Additional details...', confirm: 'Definitely attending (Confirm)', tentative: 'Not sure yet (Tentative)', audioOff: 'OFF', audioOn: 'ON'
+        footerRole: 'Media and Coordination Lead: Amila Indrajith Ahangama', footerPhone: 'Phone / WhatsApp:', copyright: '© 2026 THE ROYAL POND • Royal College Monaragala',
+        audioOff: 'OFF', audioOn: 'ON'
       }
     };
 
@@ -1594,8 +1467,7 @@
       welfare: '#welfareButtonTitle', welfareModalTitle: '#welfareModalTitle', welfareButtonIntro: '#welfareButtonIntro', welfareButtonAction: '#welfareButtonAction', welfareModalKicker: '#welfareModalKicker', welfareModalIntro: '#welfareModalIntro', sponsorship: '#sponsorshipTitle', sponsorshipIntro: '#sponsorshipIntro', sponsorCallout: '#sponsorCallout', sponsorContact: '#sponsorContactLabel',
       communityTitle: '#communityTitle', communityIntro: '#communityIntro', communityJoin: '#communityJoinLabel', groupSelectTitle: '#groupSelectTitle', groupSelectIntro: '#groupSelectIntro',
       roadshowTitle: '#roadshowTitle', roadshowIntro: '#roadshowIntro', roadshowJoin: '#roadshowJoinLabel',
-      rsvpTitle: '#rsvpSection h3', rsvpIntro: '#rsvpSection > p', rsvpButton: '#rsvpSection button span:first-child', generalChat: '#generalChatLabel',
-      modalTitle: '#rsvpModal h4', fullName: '#fullNameLabel', phone: '#phoneLabel', batch: '#batchLabel', status: '#statusLabel', notes: '#notesLabel', send: '#rsvpForm button[type="submit"]', footerRole: 'footer p:first-child', footerPhone: 'footer p:nth-child(2)', copyright: 'footer div'
+      footerRole: 'footer p:first-child', footerPhone: 'footer p:nth-child(2)', copyright: 'footer div'
     };
 
     function applyLanguage(language) {
@@ -1605,10 +1477,6 @@
         if (element && selected[key]) element.textContent = selected[key];
       });
       document.getElementById('themeDetailsContent').innerHTML = language === 'en' ? themeDetailsEnglishContent : themeDetailsSinhalaContent;
-      document.getElementById('fName').placeholder = selected.namePlaceholder;
-      document.getElementById('fNote').placeholder = selected.notesPlaceholder;
-      document.querySelector('#rsvpAttending option[value="Definitely attending (Confirm)"]').textContent = selected.confirm;
-      document.querySelector('#rsvpAttending option[value="Not sure yet (Tentative)"]').textContent = selected.tentative;
       const detailSelectors = ['main section:nth-of-type(3) .space-y-3 > div:nth-child(1) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(2) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(3) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(4) h4', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(5) h4'];
       const detailDescSelectors = ['main section:nth-of-type(3) .space-y-3 > div:nth-child(1) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(2) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(3) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(4) p', 'main section:nth-of-type(3) .space-y-3 > div:nth-child(5) p'];
       [selected.highlight1, selected.highlight2, selected.highlight3, selected.highlight4, selected.highlight5].forEach((text, index) => { const element = document.querySelector(detailSelectors[index]); if (element) element.textContent = text; });
@@ -1748,137 +1616,12 @@
       document.body.classList.remove('overflow-hidden');
     }
 
-    function openRsvpModal() {
-      const modal = document.getElementById("rsvpModal");
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    }
-
-    function closeRsvpModal() {
-      const modal = document.getElementById("rsvpModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    }
-
-    function isRsvpRegistered() {
-      return localStorage.getItem('royalPondRsvpRegistered') === 'true';
-    }
-
-    document.addEventListener('click', (event) => {
-      const link = event.target.closest('a[href]');
-      if (!link || !/^https:\/\/(chat\.whatsapp\.com|wa\.me)\//.test(link.href) || isRsvpRegistered()) return;
-
-      event.preventDefault();
-      event.stopPropagation();
-      alert('WhatsApp link භාවිතා කිරීමට පෙර කරුණාකර RSVP registration එක සම්පූර්ණ කරන්න.');
-      openRsvpModal();
-    });
-
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         closeThemeDetails();
         closeWelfareDetails();
-        closeRsvpModal();
       }
     });
-
-    // Paste the deployed Google Apps Script Web App URL here.
-    const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx4MdDxdu7zedYS-aOz19j_qab8_0gpmmMXKMB_X9X_36zIlrGP6VbjZwEOBv1F8oHEJg/exec';
-
-    const WHATSAPP_GROUP_LINKS = {
-      'Class A': 'https://chat.whatsapp.com/EfObWj3Nr81Eh869qNUqu0',
-      'Class B': 'https://chat.whatsapp.com/JWsI7rEriNwFsjjxs2QI0Q',
-      'Class C': 'https://chat.whatsapp.com/BxQVNAt0EZWJkiOv2aBNmM',
-      'Class D': 'https://chat.whatsapp.com/HoSmBK6Y9WfHu3QQzFaqzI',
-      'Class E': 'https://chat.whatsapp.com/KK2W6k80VPt7nP3ksD9m2y',
-      'ART': 'https://chat.whatsapp.com/L1xShmaukMuHJmyIe5GrfU',
-      'COMMERCE': 'https://chat.whatsapp.com/IoJjtL8JCuMBExHJFE6n7Y',
-      'SCIENCE': 'https://chat.whatsapp.com/D5pllYpzhxaDzdD1ecuiua',
-      'default': 'https://chat.whatsapp.com/GV4gVMjCmg9AoWJKWjXSZk'
-    };
-
-    function buildWhatsAppLink({ name, phone, batch, status, note }) {
-      const baseLink = WHATSAPP_GROUP_LINKS[batch] || WHATSAPP_GROUP_LINKS.default;
-      const message = [
-        `Name: ${name}`,
-        `Phone: ${phone}`,
-        `Batch: ${batch}`,
-        `Attendance: ${status}`,
-        note ? `Notes: ${note}` : ''
-      ].filter(Boolean).join('\n');
-
-      return `${baseLink}?text=${encodeURIComponent(message)}`;
-    }
-
-    async function submitRsvp(e) {
-      e.preventDefault();
-
-      const name = document.getElementById("fName").value.trim();
-      const phone = document.getElementById("fPhone").value.trim();
-      const batch = document.getElementById("rsvpBatch").value;
-      const status = document.getElementById("rsvpAttending").value;
-      const note = document.getElementById("fNote").value.trim();
-
-      if (!name || !phone) {
-        alert('සම්පූර්ණ නම සහ දුරකථන අංකය අනිවාර්යයෙන් සපුරවන්න.');
-        return;
-      }
-
-      if (GOOGLE_SHEETS_WEB_APP_URL.includes('PASTE_')) {
-        alert('Google Sheet connection එක තවම සකස් කර නැත. Apps Script Web App URL එක index.html තුළ ඇතුළත් කරන්න.');
-        return;
-      }
-
-      const submitButton = document.querySelector('#rsvpForm button[type="submit"]');
-      submitButton.disabled = true;
-      submitButton.textContent = 'සුරකිමින්...';
-
-      try {
-        const response = await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-          body: new URLSearchParams({ name, phone, batch, status, note, submittedAt: new Date().toISOString() })
-        });
-
-        if (!response.ok) {
-          throw new Error(response.status === 401 || response.status === 403
-            ? 'Google Apps Script Web App එකට public access නැත.'
-            : 'HTTP status ' + response.status);
-        }
-
-        const responseText = await response.text();
-        let result;
-        try {
-          result = JSON.parse(responseText);
-        } catch {
-          throw new Error('Google Apps Script එකෙන් JSON response එකක් නොලැබුණි.');
-        }
-        if (!result.success) {
-          throw new Error(result.error || 'Unknown server error');
-        }
-
-        localStorage.setItem('royalPondRsvpRegistered', 'true');
-        const whatsappLink = buildWhatsAppLink({ name, phone, batch, status, note });
-
-        const shouldRedirect = window.confirm('ඔබේ RSVP තොරතුරු සුරැකී ඇත. අදාල WhatsApp group එකට එක්වීමට අවශ්‍ය ද?');
-        if (!shouldRedirect) {
-          return;
-        }
-
-        document.getElementById('rsvpForm').reset();
-        closeRsvpModal();
-        window.location.href = whatsappLink;
-      } catch (error) {
-        console.error('RSVP submission failed:', error);
-        const message = error.message === 'Google Apps Script Web App එකට public access නැත.'
-          ? 'තොරතුරු සුරැකීමට නොහැකි විය. Google Apps Script Web App එක “Anyone” ලෙස deploy කර තිබේදැයි පරීක්ෂා කරන්න.'
-          : 'තොරතුරු සුරැකීමට නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න.';
-        alert(message);
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = translations[document.getElementById('languageControl').value].send;
-      }
-    }
   </script>
 </body>
 </html>
